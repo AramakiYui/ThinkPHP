@@ -1,0 +1,28 @@
+---------------------------------------------------------------
+[ 2020-05-07T11:36:10+08:00 ] 127.0.0.1 GET www.schoolsubscribe.com/
+[运行时间：0.055082s] [吞吐率：18.15req/s] [内存消耗：1,544.00kb] [文件加载：26]
+[ info ] [ LANG ] D:\phpstudy_pro\SchoolSubscribe\ThinkPHP\thinkphp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'cookie' => 'pgv_pvi=5443859456',
+  'connection' => 'close',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0',
+  'host' => 'www.schoolsubscribe.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy_pro\SchoolSubscribe\ThinkPHP\thinkphp\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
