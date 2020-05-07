@@ -34,7 +34,7 @@ class TeacherController extends Controller
             $this->error("输入有误，请重新输入",url("\TeacherController\index"));
         }
     }
-    public function deleteTime(){//缺少无法删除已经被预约的时间段
+    public function deleteTime(){
         $delete = Request::instance()->get();
         if(session("teacher") != $delete["t_id"]){
             $this->error("您无法删除不由您发布的预约",url("\TeacherController\index"));
@@ -43,7 +43,9 @@ class TeacherController extends Controller
         }else{
             $deleteC = new TeacherModel();
             $res = $deleteC->deleteFromSQL($delete);
-            if($res == 0){
+            if($res == -1){
+                $this->error("该时间段已被预约,无法删除",url("\TeacherController\index"));
+            }else if($res == 0){
                 $this->error("删除失败",url("\TeacherController\index"));
             }else{
                 $this->success("删除成功");

@@ -49,13 +49,14 @@ class TeacherModel extends Model
 //时间表相关
     //发布操作
     public function publish($time){
-        $date = Db::table("time")->where("date=".$time["date"])->find();
-        $place = Db::table("time")->where("place=".$time["place"])->find();
-        $t_id = Db::table("time")->where("t_id=".$time["t_id"])->find();
-        if($place){
-            return -1;//地点和已有的时间冲突
+        $date = Db::table("time")->where("date=".$time["date"])->value("date");
+        $time_seg = Db::table("time")->where("time_seg=".$time["time_seg"])->value("time_seg");
+        $place = Db::table("time")->where("place=".$time["place"])->value("place");
+        $t_id = Db::table("time")->where("t_id=".$time["t_id"])->value("t_id");
+        if($place !== null && $date !== null && $time_seg !== null){
+            return -1;//地点和已有的地点冲突
         }
-        else if($t_id && $date){
+        else if($t_id !== null && $date !== null && $time_seg !== null){
             return -2;//时间和自己已发布的时间有冲突
         }else{
             return Db::table("time")->insert($time);
@@ -63,6 +64,10 @@ class TeacherModel extends Model
     }
     //删除操作
     public function deleteFromSQL($time){//传入由get得到的参数
-        return Db::table("time")->where("date=".$time["date"] . "AND t_id = ".$time["t_id"])->delete();
+        $free = Db::table("time")->where("t_id=".$time["t_id"])->select("free");
+        if($free == 1) return -1;
+        else
+            return Db::table("time")->
+            where("date=".$time["date"] . "AND t_id = ".$time["t_id"] . "AND time_seg=".$time["time_seg"])->delete();
     }
 }

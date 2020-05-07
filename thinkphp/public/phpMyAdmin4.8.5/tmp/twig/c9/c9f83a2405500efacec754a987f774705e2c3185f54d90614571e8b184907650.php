@@ -76,6 +76,6 @@ class __TwigTemplate_01156899cad488f116d05cdb57ba715faf4022251992d26bcc0597ee4a2
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "columns_definitions/column_length.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\columns_definitions\\column_length.twig");
+        return new Twig_Source("", "columns_definitions/column_length.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\columns_definitions\\column_length.twig");
     }
 }

@@ -54,6 +54,6 @@ class __TwigTemplate_f5a8f54761564c3707e95650891399acf87abe612c26836571d85c4f9db
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "database/structure/browse_table_label.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\database\\structure\\browse_table_label.twig");
+        return new Twig_Source("", "database/structure/browse_table_label.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\database\\structure\\browse_table_label.twig");
     }
 }

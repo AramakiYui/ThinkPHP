@@ -102,6 +102,6 @@ class __TwigTemplate_317e6a04ff97bbe907c2774da468178700142d743a072dddfa814371038
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "table/structure/action_row_in_structure_table.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\table\\structure\\action_row_in_structure_table.twig");
+        return new Twig_Source("", "table/structure/action_row_in_structure_table.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\table\\structure\\action_row_in_structure_table.twig");
     }
 }

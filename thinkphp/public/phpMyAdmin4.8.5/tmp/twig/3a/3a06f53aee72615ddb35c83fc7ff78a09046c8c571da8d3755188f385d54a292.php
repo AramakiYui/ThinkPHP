@@ -392,6 +392,6 @@ class __TwigTemplate_0bd31cc2b18d390e63da44852506c15d635c455bca63015d9ca6ac5d933
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "columns_definitions/column_attributes.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\columns_definitions\\column_attributes.twig");
+        return new Twig_Source("", "columns_definitions/column_attributes.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\columns_definitions\\column_attributes.twig");
     }
 }

@@ -98,6 +98,6 @@ class __TwigTemplate_75515f672bb028bba73f9afcf415c6d9eb7a06a51591ef8ce10042c5491
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "config/form_display/fieldset_top.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\config\\form_display\\fieldset_top.twig");
+        return new Twig_Source("", "config/form_display/fieldset_top.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\config\\form_display\\fieldset_top.twig");
     }
 }

@@ -44,4 +44,27 @@ class StudentModel extends Model
             return Db::table("teacher")->insert($student);
         }
     }
+//预约相关
+    //查看已发布的预约表
+    public function scanTime($t_name,$page){
+        if($t_name == "N/A"){
+            return Db::table("time")->page("$page,10")->find();
+        }else{
+            return Db::table("time")->where("t_name=".$t_name)->page("$page,10")->find();
+        }
+    }
+    //查看学生已订阅的时间
+    public function ListOfMy($stu_id){
+        return Db::table("subscribe")->where("stu_id=".$stu_id)->find();
+    }
+    public function subscribe($t_data,$stu_id){
+        $seq = Db::table("time")->where($t_data)->value("seq");
+        $t_id = Db::table("time")->where($t_data)->value("t_id");
+        $dataInsert = array("seq"=>"$seq","t_id"=>"$t_id","stu_id"=>"$stu_id");
+        if($seq !== null && $t_id !== null && $stu_id !== null) {
+            return Db::table("subscirbe")->insert("$dataInsert");
+        }else{
+            return -1;
+        }
+    }
 }
