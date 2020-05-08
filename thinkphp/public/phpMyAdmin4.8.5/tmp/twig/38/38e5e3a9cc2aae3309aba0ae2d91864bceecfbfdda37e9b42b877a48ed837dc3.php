@@ -57,6 +57,6 @@ class __TwigTemplate_1b18420808f470a1f101cca32843ae49afa06325033c7286770f6f8a661
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "config/form_display/group_header.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\config\\form_display\\group_header.twig");
+        return new Twig_Source("", "config/form_display/group_header.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\config\\form_display\\group_header.twig");
     }
 }

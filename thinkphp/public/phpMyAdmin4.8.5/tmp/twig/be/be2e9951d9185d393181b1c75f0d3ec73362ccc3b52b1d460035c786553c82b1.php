@@ -84,6 +84,6 @@ class __TwigTemplate_3efdd0acf4ccce8c6bdaee7084c95560c3eaa6a58d8f75231da76327d7c
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "console/query_action.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\console\\query_action.twig");
+        return new Twig_Source("", "console/query_action.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\console\\query_action.twig");
     }
 }

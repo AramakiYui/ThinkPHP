@@ -116,6 +116,6 @@ class __TwigTemplate_18a843babdaa63257d81ead8bf3295a9402a81b01bb5627a827d04eac1d
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "select_lang.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\select_lang.twig");
+        return new Twig_Source("", "select_lang.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\select_lang.twig");
     }
 }

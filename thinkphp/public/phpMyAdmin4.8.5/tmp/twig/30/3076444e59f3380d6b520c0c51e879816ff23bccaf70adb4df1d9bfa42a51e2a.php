@@ -89,6 +89,6 @@ class __TwigTemplate_96124acaf8fd848c2c553497d459471fdde0fb5d634713bc5c22fded7de
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "columns_definitions/move_column.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\columns_definitions\\move_column.twig");
+        return new Twig_Source("", "columns_definitions/move_column.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\columns_definitions\\move_column.twig");
     }
 }
