@@ -47,6 +47,10 @@ class TeacherModel extends Model
         }
     }
 //时间表相关
+    //查找操作
+    public function ListOfPublished($t_id){
+        return Db::table("time")->where("t_id=".$t_id)->find();
+    }
     //发布操作
     public function publish($time){
         $date = Db::table("time")->where("date=".$time["date"])->value("date");

@@ -34,6 +34,17 @@ class TeacherController extends Controller
             $this->error("输入有误，请重新输入",url("\TeacherController\index"));
         }
     }
+    //查看自己已经订阅的时间
+    public function listOfPublished(){
+        $myTime = new TeacherModel();
+        $t_id = session("teacher");
+        $published = $myTime->listOfPublished($t_id);
+        if($published == 0){
+            $this->error("您没有发布任何时间",url("/Teacher/index"));
+        }
+        $this->assign("myTimeData",$published);
+        $this->display("/Teacher/listofPublished");
+    }
     public function deleteTime(){
         $delete = Request::instance()->get();
         if(session("teacher") != $delete["t_id"]){
