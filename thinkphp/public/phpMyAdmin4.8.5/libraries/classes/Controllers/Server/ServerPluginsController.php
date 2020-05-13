@@ -35,7 +35,7 @@ class ServerPluginsController extends Controller
     }
 
     /**
-     * Index action
+     * IndexController action
      *
      * @return void
      */

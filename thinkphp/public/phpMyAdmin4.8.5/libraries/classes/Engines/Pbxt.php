@@ -27,7 +27,7 @@ class Pbxt extends StorageEngine
     {
         return array(
             'pbxt_index_cache_size'        => array(
-                'title' => __('Index cache size'),
+                'title' => __('IndexController cache size'),
                 'desc'  => __(
                     'This is the amount of memory allocated to the'
                     . ' index cache. Default value is 32MB. The memory'

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{block name="title"}Login{/block}</title>
+    <link rel="stylesheet" type="text/css" href="\static\bootstrap-3.4.1-dist\css\bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<style>
+        body {
+            font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+            line-height: 1.5;
+            color: #24292e;
+            background-color: #F9F9F9;
+        }
+        .div_container_top{
+                width:100%;
+        }
+        .div_container_top_center{
+                width:310px;
+                height:150px;
+                margin:0 auto;
+
+        }
+        .div_logo{
+        width:53px;
+        height:53px;
+        margin:0 auto;
+
+        }
+        .div_word{
+        width:310;
+        margin:0 auto;
+        font-size: 24px;
+        font-weight: 300;
+        letter-spacing: -0.5px;
+        text-align:center;
+        }
+
+        .div_container_main{
+                width:100%;
+
+        }
+        .div_container_main_center{
+                width:310px;
+                height:285px;
+                margin:0 auto;
+                background-color:#FFF;
+                border: 1px solid #d8dee2;
+                border-radius: 5px;
+                padding: 20px;
+                box-sizing: border-box;
+        }
+
+        .div_main_identity{
+            width:100%;
+            height:25px;
+        }
+        .div_identity_word{
+            font-size: 16px;
+            font-weight:600;
+            float:left;
+        }
+
+        .div_main_identity_choose{
+            width:100%;
+            height:30px;
+        }
+        .div_identity_choose_word{
+            float:left;
+        }
+
+
+        .div_main_first{
+                width:100%;
+                height:20px;
+                margin-top:10px;
+        }
+        .div_first_word{
+                font-size: 16px;
+                font-weight:600;
+                float:left;
+
+        }
+        .div_main_second{
+                width:100%;
+                height:40px;
+
+        }
+
+        .div_main_third{
+                width:100%;
+                height:30px;
+                margin-top:10px;
+
+        }
+        .div_chat_top_word1{
+        font-size: 16px;
+        font-weight:600;
+        float:left;
+        }
+        .div_chat_top_word2{
+        font-size: 12px;
+        color:#0366d6;
+        font-weight:600;
+        float:right;
+        }
+
+        .div_main_fouth{
+                width:100%;
+                height:40px;
+
+        }
+
+        .search{
+                //width:135px;
+                height:20px;
+                float:right;
+                margin:0 auto;
+
+
+
+            }
+        .div_main_fifth{
+                width:100%;
+                height:40px;
+
+        }
+        .div_fifth_button{
+
+                margin-top:8px;
+                padding:8px 12px;
+                font-size:14px;
+                font-weight:600;
+                line-height:20px;
+                border:1px solid rgba(27,31,35,0.2);
+                width:265px;
+                color:white;
+                background-color:#269f42;
+                background-image: linear-gradient(-180deg,#34d058 0%,#28a745 90%);
+                border-radius: .5em;
+                text-align:center;
+
+            }
+
+        .div_foot{
+                margin-top:20px;
+                width:100%;
+                height:100px;
+
+        }
+        .div_foot_main{
+                width:310px;
+                height:90px;
+                margin:0 auto;
+                background-color:#F9F9F9;
+
+        }
+        .div_sixth{
+                width:310px;
+                height:70px;
+                background-color:#F9F9F9;
+                color:#0366D6;
+                border:1px solid #D8DEE2;
+                border-radius: 0.25em;
+                text-align:center;
+        }
+        .div_sixth_word1{
+
+                width:150px;
+                text-align:center;
+                //margin:0 auto;
+                float:left;
+                margin-top:10px;
+        }
+        .div_sixth_word2{
+
+                width:150px;
+                text-align:center;
+                //margin:0 auto;
+                float:right;
+                margin-top:10px;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+        <div class="div_container_top">
+            <div class="div_container_top_center">
+                <div class="div_logo">
+                    <img src="/images/favicon.ico" style="width:53px;height:53px;margin-top:30px;">
+                </div>
+                <div class="div_word"style="margin-top:50px;">Login Your Account
+                </div>
+            </div>
+        </div>
+
+        <form action="{:url('www.schoolsubscribe.com/index.php/index/Login/check')}" accept-charset="UTF-8" method="post">
+            <div class="div_container_main">
+            <div class="div_container_main_center">
+
+                    <div class="div_main_identity">
+                            <div class="div_identity_word">
+                            Choose Your Identity
+                            </div>
+                    </div>
+
+
+                    <div class="div_main_identity_choose">
+                        <div class="div_identity_choose_word">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-primary">
+<!--                                    <input type="radio" name="options1" id="teacher"> 老师-->
+                                    <input type="radio" name="tLogin" value="1">老师
+                                </label>
+                                <label class="btn btn-primary">
+<!--                                    <input type="radio" name="options2" id="student"> 学生-->
+                                    <input type="radio" name="tLogin" value="0"> 学生
+                                </label>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="div_main_first">
+                            <div class="div_first_word">
+                            Username
+                            </div>
+                    </div>
+                    <div class="div_main_second">
+                            <div class="search"style="float:left;">
+
+                                <input id="usename" name="id"  type="text" style="width:270px;height:30px; border:1px #d1d5da solid;border-radius:3px; ">
+                            </div>
+                    </div>
+                    <div class="div_main_third">
+                            <div class="div_chat_top_word1">
+                            Password
+                            </div>
+                            <div class="div_chat_top_word2">
+                            Forgot password？
+                            </div>
+                    </div>
+                    <div class="div_main_fouth">
+                            <div class="search"style="float:left;">
+                                <input id="password" name="password"  type="password" style="width:270px;height:30px; border:1px #d1d5da solid;border-radius:3px; ">
+                            </div>
+                    </div>
+                    <div class="div_main_fifth">
+                        <input type="submit" name="commit" value="Login" tabindex="3" class="div_fifth_button">
+                            <!-- <div class="div_fifth_button">
+                                <a href="file://C:\Users\Makki\PhpstormProjects\ThinkPHP\thinkphp\application\index\view\Teacher\index.html" class="div_chat_button"style="color:white;text-decoration: none;">Sign in</a>
+                            </div> -->
+                    </div>
+            </div>
+        </form>
+
+
+        </div>
+        <div class="div_foot">
+                <div class="div_foot_main">
+                        <div class="div_sixth">
+                                <div class="div_sixth_word1">
+                                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sturegister">学生注册</button>
+                                </div>
+                                <div class="div_sixth_word2">
+                                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#tearegister">老师注册</button>
+                                </div>
+
+                        </div>
+
+
+                </div>
+         </div>
+
+     <!-- 注册 -->
+
+        <div id="sturegister" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h1 class="text-center">注册</h1>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-group" action={:url('www.schoolsubscribe.com/index.php/index/Register/register')} method="post">
+                            <div class="form-group">
+                                <label for="">学号</label>
+                                <input class="form-control" type="hidden" name="tRegister" value="0">
+                                <input class="form-control" type="text" placeholder="9位数字" name="stu_id">
+                            </div>
+                            <div class="form-group">
+                                <label for="">姓名</label>
+                                <input class="form-control" type="text"  name="stu_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="">性别</label>
+                                <input  type="radio"  name="stu_sex" value="男" checked>男
+                                <input  type="radio"  name="stu_sex" value="女">女
+                            </div>
+                            <div class="form-group">
+                                <label for="">密码</label>
+                                <input class="form-control" type="password" placeholder="至少6位字母或数字" name="stu_password">
+                            </div>
+                            <div class="form-group">
+                                <label for="">再次输入密码</label>
+                                <input class="form-control" type="password" placeholder="至少6位字母或数字" name="stu_password_again">
+                            </div>
+                            <div class="form-group">
+                                <label for="">电话</label>
+                                <input class="form-control" type="text"  name="stu_phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="">邮箱</label>
+                                <input class="form-control" type="email" placeholder="例如:***@***.com" name="stu_email">
+                            </div>
+                            <div class="text-right">
+                                <button class="btn btn-primary" type="submit" style="background-color: #3a8cd2b3;border: 0px solid transparent;">提交</button>
+                                <button class="btn btn-danger" data-dismiss="modal" style="background-color: #fb5e5999;border: 0px solid transparent;">取消</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     <!-- 注册 -->
+
+        <div id="tearegister" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h1 class="text-center">注册</h1>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-group" action={:url('www.schoolsubscribe.com/index.php/index/Register/register')} method="post">
+                            <div class="form-group">
+                                <label for="">工号</label>
+                                <input class="form-control" type="hidden" name="tRegister" value="1">
+                                <input class="form-control" type="text" placeholder="6位数字" name="t_id">
+                            </div>
+                            <div class="form-group">
+                                <label for="">姓名</label>
+                                <input class="form-control" type="text"  name="t_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="">性别</label>
+                                <input  type="radio"  name="t_sex" value="男" checked>男
+                                <input  type="radio"  name="t_sex" value="女">女
+                            </div>
+                            <div class="form-group">
+                                <label for="">年龄</label>
+                                <input class="form-control" type="text"  name="t_age">
+                            </div>
+                            <div class="form-group">
+                                <label for="">电话</label>
+                                <input class="form-control" type="text"  name="t_phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="">密码</label>
+                                <input class="form-control" type="password" placeholder="至少6位字母或数字" name="t_password">
+                            </div>
+                            <div class="form-group">
+                                <label for="">再次输入密码</label>
+                                <input class="form-control" type="password" placeholder="至少6位字母或数字" name="t_password_again">
+                            </div>
+                            <div class="form-group">
+                                <label for="">邮箱</label>
+                                <input class="form-control" type="email" placeholder="例如:***@***.com" name="t_email">
+                            </div>
+                            <div class="text-right">
+                                <button class="btn btn-primary" type="submit" style="background-color: #3a8cd2b3;border: 0px solid transparent;">提交</button>
+                                <button class="btn btn-danger" data-dismiss="modal" style="background-color: #fb5e5999;border: 0px solid transparent;">取消</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>

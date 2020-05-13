@@ -130,7 +130,7 @@ class TableStructureController extends TableController
     }
 
     /**
-     * Index action
+     * IndexController action
      *
      * @return void
      */
@@ -1208,12 +1208,12 @@ class TableStructureController extends TableController
             'Drop' => Util::getIcon('b_drop', __('Drop')),
             'NoDrop' => Util::getIcon('b_drop', __('Drop')),
             'Primary' => Util::getIcon('b_primary', __('Primary')),
-            'Index' => Util::getIcon('b_index', __('Index')),
+            'IndexController' => Util::getIcon('b_index', __('IndexController')),
             'Unique' => Util::getIcon('b_unique', __('Unique')),
             'Spatial' => Util::getIcon('b_spatial', __('Spatial')),
             'IdxFulltext' => Util::getIcon('b_ftext', __('Fulltext')),
             'NoPrimary' => Util::getIcon('bd_primary', __('Primary')),
-            'NoIndex' => Util::getIcon('bd_index', __('Index')),
+            'NoIndex' => Util::getIcon('bd_index', __('IndexController')),
             'NoUnique' => Util::getIcon('bd_unique', __('Unique')),
             'NoSpatial' => Util::getIcon('bd_spatial', __('Spatial')),
             'NoIdxFulltext' => Util::getIcon('bd_ftext', __('Fulltext')),

@@ -8,7 +8,7 @@
 namespace PhpMyAdmin;
 
 /**
- * Index column wrapper
+ * IndexController column wrapper
  *
  * @package PhpMyAdmin
  */

@@ -172,7 +172,7 @@ class TableSearchController extends TableController
     }
 
     /**
-     * Index action
+     * IndexController action
      *
      * @return void
      */

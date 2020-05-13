@@ -43,7 +43,7 @@ class ServerBinlogController extends Controller
     }
 
     /**
-     * Index action
+     * IndexController action
      *
      * @return void
      */

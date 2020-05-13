@@ -21278,7 +21278,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 	}
 
 	/**
-	 * Output a Table of Content Index (TOC).
+	 * Output a Table of Content IndexController (TOC).
 	 * This method must be called after all Bookmarks were set.
 	 * Before calling this method you have to open the page using the addTOCPage() method.
 	 * After calling this method you have to call endTOCPage() to close the TOC page.
@@ -21489,7 +21489,7 @@ Putting 1 is equivalent to putting 0 and calling Ln() just after. Default value:
 	}
 
 	/**
-	 * Output a Table Of Content Index (TOC) using HTML templates.
+	 * Output a Table Of Content IndexController (TOC) using HTML templates.
 	 * This method must be called after all Bookmarks were set.
 	 * Before calling this method you have to open the page using the addTOCPage() method.
 	 * After calling this method you have to call endTOCPage() to close the TOC page.

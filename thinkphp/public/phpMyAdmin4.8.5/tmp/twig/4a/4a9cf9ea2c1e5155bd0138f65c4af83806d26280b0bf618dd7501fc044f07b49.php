@@ -55,7 +55,7 @@ class __TwigTemplate_8cd16be7433877f0ad60f5c6ecf7d149885ace27522c2e28ad3abc4d218
         // line 12
         echo twig_escape_filter($this->env, (isset($context["column_number"]) ? $context["column_number"] : null), "html", null, true);
         echo "\" title=\"";
-        echo _gettext("Index");
+        echo _gettext("IndexController");
         echo "\"";
         // line 13
         echo ((($this->getAttribute((isset($context["column_meta"]) ? $context["column_meta"] : null), "Key", [], "array", true, true) && ($this->getAttribute((isset($context["column_meta"]) ? $context["column_meta"] : null), "Key", [], "array") == "MUL"))) ? (" selected=\"selected\"") : (""));

@@ -14,7 +14,7 @@
  * Actions ajaxified here:
  * Drop Column
  * Add Primary Key
- * Drop Primary Key/Index
+ * Drop Primary Key/IndexController
  *
  */
 

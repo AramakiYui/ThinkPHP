@@ -52,7 +52,7 @@ class ServerDatabasesController extends Controller
     private $_pos;
 
     /**
-     * Index action
+     * IndexController action
      *
      * @return void
      */

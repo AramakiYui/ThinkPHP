@@ -471,7 +471,7 @@ abstract class Statement
         /**
          * For tracking JOIN clauses in a query
          *   = 0 - JOIN not found till now
-         *   > 0 - Index of first JOIN clause in the statement.
+         *   > 0 - IndexController of first JOIN clause in the statement.
          *
          * @var int
          */
@@ -480,7 +480,7 @@ abstract class Statement
         /**
          * For tracking JOIN clauses in a query
          *   = 0 - JOIN not found till now
-         *   > 0 - Index of last JOIN clause
+         *   > 0 - IndexController of last JOIN clause
          *         (which appears together with other JOINs)
          *         in the statement.
          *
@@ -504,7 +504,7 @@ abstract class Statement
                 || $clauseType === 'USE')
             ) {
                 // TODO: ordering of clauses in a SELECT statement with
-                // Index hints is not supported
+                // IndexController hints is not supported
                 return true;
             }
 

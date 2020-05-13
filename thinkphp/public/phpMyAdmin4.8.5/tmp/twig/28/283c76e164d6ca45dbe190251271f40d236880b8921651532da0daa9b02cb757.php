@@ -38,7 +38,7 @@ class __TwigTemplate_317e6a04ff97bbe907c2774da468178700142d743a072dddfa814371038
                 // line 10
                 echo "            add_primary_key_anchor";
             } elseif ((            // line 11
-(isset($context["action"]) ? $context["action"] : null) == "Index")) {
+(isset($context["action"]) ? $context["action"] : null) == "IndexController")) {
                 // line 12
                 echo "            add_index_anchor";
             } elseif ((            // line 13

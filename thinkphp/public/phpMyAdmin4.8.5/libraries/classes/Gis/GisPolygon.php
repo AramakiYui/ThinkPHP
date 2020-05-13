@@ -334,7 +334,7 @@ class GisPolygon extends GisGeometry
      * Generate the WKT with the set of parameters passed by the GIS editor.
      *
      * @param array  $gis_data GIS data
-     * @param int    $index    Index into the parameter object
+     * @param int    $index    IndexController into the parameter object
      * @param string $empty    Value for empty points
      *
      * @return string WKT with the set of parameters passed by the GIS editor
@@ -564,7 +564,7 @@ class GisPolygon extends GisGeometry
     /** Generate parameters for the GIS data editor from the value of the GIS column.
      *
      * @param string $value Value of the GIS column
-     * @param int    $index Index of the geometry
+     * @param int    $index IndexController of the geometry
      *
      * @return array params for the GIS data editor from the value of the GIS column
      * @access public

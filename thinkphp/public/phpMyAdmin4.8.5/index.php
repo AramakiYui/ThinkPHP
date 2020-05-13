@@ -557,7 +557,7 @@ if ($GLOBALS['cfg']['LoginCookieStore'] != 0
 ) {
     trigger_error(
         __(
-            'Login cookie store is lower than cookie validity configured in ' .
+            'LoginController cookie store is lower than cookie validity configured in ' .
             'phpMyAdmin, because of this, your login will expire sooner than ' .
             'configured in phpMyAdmin.'
         ),

@@ -106,7 +106,7 @@ class __TwigTemplate_e66df58b609cde3e21e13a093b74062ba24e56f85b88674e1e6626c9bde
             echo "            <th>
                 ";
             // line 46
-            echo _gettext("Index");
+            echo _gettext("IndexController");
             // line 47
             echo "            </th>
         ";

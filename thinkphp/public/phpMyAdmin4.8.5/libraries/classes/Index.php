@@ -14,7 +14,7 @@ use PhpMyAdmin\Url;
 use PhpMyAdmin\Util;
 
 /**
- * Index manipulation class
+ * IndexController manipulation class
  *
  * @package PhpMyAdmin
  * @since   phpMyAdmin 3.0.0
@@ -122,13 +122,13 @@ class Index
     }
 
     /**
-     * Creates(if not already created) and returns the corresponding Index object
+     * Creates(if not already created) and returns the corresponding IndexController object
      *
      * @param string $schema     database name
      * @param string $table      table name
      * @param string $index_name index name
      *
-     * @return Index corresponding Index object
+     * @return Index corresponding IndexController object
      */
     static public function singleton($schema, $table, $index_name = '')
     {
@@ -757,7 +757,7 @@ class Index
                         . Util::backquote($table) . ' DROP INDEX '
                         . Util::backquote($index->getName()) . ';';
                     $this_params['message_to_show'] = sprintf(
-                        __('Index %s has been dropped.'), htmlspecialchars($index->getName())
+                        __('IndexController %s has been dropped.'), htmlspecialchars($index->getName())
                     );
                     $js_msg = Sanitize::jsFormat($this_params['sql_query']);
                 }

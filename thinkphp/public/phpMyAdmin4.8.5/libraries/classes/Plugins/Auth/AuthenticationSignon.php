@@ -64,7 +64,7 @@ class AuthenticationSignon extends AuthenticationPlugin
         /* Session cookie params */
         $session_cookie_params = (array) $GLOBALS['cfg']['Server']['SignonCookieParams'];
 
-        /* Login URL */
+        /* LoginController URL */
         $signon_url = $GLOBALS['cfg']['Server']['SignonURL'];
 
         /* Current host */

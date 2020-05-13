@@ -8,8 +8,7 @@ use app\index\model\StudentModel;
 use app\index\model\TeacherModel;
 use think\Controller;
 use think\Request;
-use think\Model;
-class Login extends Controller
+class LoginController extends Controller
 {
     public function index()
     {
@@ -19,14 +18,14 @@ class Login extends Controller
         if(session("student")){
             $this->redirect('/student.php?c=index');
         }
-        $this->display();
+        return $this->fetch();
     }
 //用户登录
     //输入检查函数
     public function inputCheck(){
         $post = Request::instance()->post();
-        if($post["id"] == null) $this->error("用户名不能为空",url("\Login\index"));
-        if($post["password"] == null) $this->error("密码不能为空",url("\Login\index"));
+        if($post["id"] == null) $this->error("用户名不能为空",url("\Index\index"));
+        if($post["password"] == null) $this->error("密码不能为空",url("\Index\index"));
         return true;
     }
     public function check(){
@@ -40,7 +39,7 @@ class Login extends Controller
                 session("teacher",$t_id);
                 $this->success("登录成功",url("Teacher/index"));
             }else{
-                $this->error("登录失败，用户名或密码错误",url("Teacher/index"));
+                $this->error("登录失败，用户名或密码错误",url("Index/index"));
             }
         }else{//学生登录
             $stu_id = Request::instance()->post("id");
@@ -50,7 +49,7 @@ class Login extends Controller
                 session("student",$stu_id);
                 $this->success("登录成功",url("Student/index"));
             }else{
-                $this->error("登录失败,用户名或密码错误",url("Student/index"));
+                $this->error("登录失败,用户名或密码错误",url("Index/index"));
             }
 
         }

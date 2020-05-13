@@ -73,7 +73,7 @@ class __TwigTemplate_abb82ca2bfa70e7332725f926640785b0bd58a6f691e1fb1b8c47edd2a7
                 echo "                    <tr>
                         <th class=\"name\">";
                 // line 24
-                echo _gettext("Index");
+                echo _gettext("IndexController");
                 echo "</th>
                         <td class=\"value\">";
                 // line 25

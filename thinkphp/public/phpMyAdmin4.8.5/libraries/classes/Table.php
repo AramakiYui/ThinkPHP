@@ -2017,7 +2017,7 @@ class Table
     /**
      * Get index with index name
      *
-     * @param string $index Index name
+     * @param string $index IndexController name
      *
      * @return Index
      */

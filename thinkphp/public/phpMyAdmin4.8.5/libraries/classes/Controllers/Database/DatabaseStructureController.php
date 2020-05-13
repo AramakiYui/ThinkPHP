@@ -99,7 +99,7 @@ class DatabaseStructureController extends DatabaseController
     }
 
     /**
-     * Index action
+     * IndexController action
      *
      * @return void
      */

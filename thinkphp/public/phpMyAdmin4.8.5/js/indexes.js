@@ -137,9 +137,9 @@ function PMA_setIndexFormParameters (source_array, index_choice) {
 }
 
 /**
- * Removes a column from an Index.
+ * Removes a column from an IndexController.
  *
- * @param string col_index Index of column in form
+ * @param string col_index IndexController of column in form
  *
  * @return void
  */
@@ -175,12 +175,12 @@ function PMA_removeColumnFromIndex (col_index) {
 }
 
 /**
- * Adds a column to an Index.
+ * Adds a column to an IndexController.
  *
  * @param array  source_array Array holding corresponding indexes
- * @param string array_index  Index of an INDEX in array
- * @param string index_choice Choice of Index
- * @param string col_index    Index of column on form
+ * @param string array_index  IndexController of an INDEX in array
+ * @param string index_choice Choice of IndexController
+ * @param string col_index    IndexController of column on form
  *
  * @return void
  */
@@ -296,13 +296,13 @@ function PMA_getCompositeIndexList (source_array, col_index) {
 }
 
 /**
- * Shows 'Add Index' dialog.
+ * Shows 'Add IndexController' dialog.
  *
  * @param array  source_array   Array holding particluar index
- * @param string array_index    Index of an INDEX in array
+ * @param string array_index    IndexController of an INDEX in array
  * @param array  target_columns Columns for an INDEX
- * @param string col_index      Index of column on form
- * @param object index          Index detail object
+ * @param string col_index      IndexController of column on form
+ * @param object index          IndexController detail object
  *
  * @return void
  */
@@ -414,7 +414,7 @@ function PMA_showAddIndexDialog (source_array, array_index, target_columns, col_
  *
  * @param array  source_array Array holding a particular type of indexes
  * @param string index_choice Choice of index
- * @param string col_index    Index of new column on form
+ * @param string col_index    IndexController of new column on form
  *
  * @return void
  */
@@ -576,7 +576,7 @@ AJAX.registerOnload('indexes.js', function () {
     });
 
     /**
-     * Ajax Event handler for 'Drop Index'
+     * Ajax Event handler for 'Drop IndexController'
      */
     $(document).on('click', 'a.drop_primary_key_index_anchor.ajax', function (event) {
         event.preventDefault();
@@ -637,7 +637,7 @@ AJAX.registerOnload('indexes.js', function () {
                 }
             }); // end $.post()
         }); // end $.PMA_confirm()
-    }); // end Drop Primary Key/Index
+    }); // end Drop Primary Key/IndexController
 
     /**
      *Ajax event handler for index edit
@@ -677,7 +677,7 @@ AJAX.registerOnload('indexes.js', function () {
      * and column addition.
      */
     $('body').on('change', 'select[name*="field_key"]', function () {
-        // Index of column on Table edit and create page.
+        // IndexController of column on Table edit and create page.
         var col_index = /\d+/.exec($(this).attr('name'));
         col_index = col_index[0];
         // Choice of selected index.

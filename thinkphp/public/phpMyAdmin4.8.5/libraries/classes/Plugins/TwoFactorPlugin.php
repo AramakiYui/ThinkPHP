@@ -134,7 +134,7 @@ class TwoFactorPlugin
      */
     public static function getDescription()
     {
-        return __('Login using password only.');
+        return __('LoginController using password only.');
     }
 
     /**
