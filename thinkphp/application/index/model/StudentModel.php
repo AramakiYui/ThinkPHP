@@ -41,10 +41,11 @@ class StudentModel extends Model
             return -1;//学生用户名已存在
         }else{
             $data_ins = array(  "stu_id"         =>$student["stu_id"],
-                "stu_name"       =>$student["stu_name"],
-                "stu_email"      =>$student["stu_email"],
-                "stu_sex"        =>$student["stu_sex"],
-                "stu_phone"      =>$student["stu_phone"]);
+                                "stu_name"       =>$student["stu_name"],
+                                "stu_email"      =>$student["stu_email"],
+                                "stu_sex"        =>$student["stu_sex"],
+                                "stu_phone"      =>$student["stu_phone"]);
+
             $data_ins["stu_password"] = $this->encryptPassword($student["stu_password"]);
             if($student["stu_password"] !== $student["stu_password_again"]) return -2;//两次密码不一样
             $data_ins["stu_password"] = $this->encryptPassword($student["stu_password"]);

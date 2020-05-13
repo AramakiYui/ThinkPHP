@@ -10,8 +10,35 @@ use think\Controller;
 use think\Request;
 class RegisterController extends LoginController
 {
+    public function inputCheckR($data)
+    {
+        if(isset($data["stu_id"])&&(strlen($data["stu_id"]) != 9)) return true;
+        if(isset($data["t_id"])&&(strlen($data["t_id"]) != 6)) return true;
+
+        if(isset($data["stu_id"]) &&
+            !empty($data["stu_sex"])&&
+            !empty($data["stu_name"])&&
+            !empty($data["stu_email"])&&
+            !empty($data["stu_phone"])&&
+            !empty($data["stu_password"])&&
+            !empty($data["stu_password_again"]))
+            return true;
+
+        if(isset($data["t_id"]) &&
+            !empty($data["t_sex"])&&
+            !empty($data["t_name"])&&
+            !empty($data["t_email"])&&
+            !empty($data["t_phone"])&&
+            !empty($data["t_password"])&&
+            !empty($data["t_password_again"])&&
+            !empty($data["t_age"]))
+            return true;
+    }
     public function register(){
         $data = Request::instance()->post();
+        if($this->inputCheckR($data)){
+            $this->error("所有的参数必须符合规范",url("\Index\index"));
+        }
         if($data["tRegister"]){//老师注册
             $teacher = new TeacherModel();
             $result = $teacher->register($data);
@@ -35,6 +62,3 @@ class RegisterController extends LoginController
         }
     }
 }
-//register
-//tRegiser
-//
