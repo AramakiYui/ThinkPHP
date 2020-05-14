@@ -56,7 +56,15 @@ class TeacherModel extends Model
 //时间表相关
     //查找操作
     public function ListOfPublished($t_id){
-        return Db::table("time")->where("t_id",$t_id)->find();
+        return Db::table("time")->where("t_id",$t_id)->select();
+    }
+    public function ListOfSubscribed($t_id){
+        return Db::table("subscribe")->where("t_id",$t_id)->select();
+    }
+    public function nameOfSubscribedStu($seq){
+        return Db::table("time")->join("subscribe s","time.seq=s.seq")
+                                       ->join("student stu","s.stu_id=stu.stu_id")
+                                       ->value("stu_name");
     }
     //发布操作
     public function publish($time){
@@ -76,14 +84,38 @@ class TeacherModel extends Model
     //删除操作
     public function deleteFromSQL($time){//传入由get得到的参数
         $free = Db::table("time")->where("t_id",$time["t_id"])->select("free");
-        if($free == 1) return -1;
+        if($free == 2) return -1;
         else{
-            $data_del = array("date"    =>$time["date"],
-                              "t_id"    =>$time["t_id"],
-                              "time_seg"=>$time["time_seg"]);
+            $data_del = array("seq"    =>$time["seq"],
+                              "t_id"    =>$time["t_id"]);
             return Db::table("time")->where($data_del)->delete();
         }
 //            return Db::table("time")->
 //            where("date=".$time["date"] . "AND t_id = ".$time["t_id"] . "AND time_seg=".$time["time_seg"])->delete();
     }
+    public function editTime($edit){
+        $update = array(
+            "date"      =>$edit["date"],
+            "time_seg"  =>$edit["time_seg"],
+            "place"     =>$edit["place"],
+            "t_id"      =>$edit["t_id"]
+        );
+        $where = array("seq"=>$edit["seq"]);
+        return Db::table("time")->where($where)->update($update);
+    }
+    public function editInformation($edit){
+        $update = array(
+            "t_name"    =>$edit["t_name"],
+            "t_sex"     =>$edit["t_sex"],
+            "t_age"     =>$edit["t_age"],
+            "t_phone"   =>$edit["t_phone"]
+        );
+        $where = array("t_id"=>$edit["t_id"]);
+        return Db::table("teacher")->where($where)->update($update);
+    }
 }
+
+//未预约0
+//未完成1 没人预约过了时间
+//已预约2
+//已完成3

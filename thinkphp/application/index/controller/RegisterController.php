@@ -33,12 +33,13 @@ class RegisterController extends LoginController
             !empty($data["t_password_again"])&&
             !empty($data["t_age"]))
             return true;
+        return false;
     }
     public function register(){
         $data = Request::instance()->post();
-        if($this->inputCheckR($data)){
-            $this->error("所有的参数必须符合规范",url("\Index\index"));
-        }
+//        if($this->inputCheckR($data)){
+//            $this->error("所有的参数必须符合规范",url("\Index\index"));
+//        }
         if($data["tRegister"]){//老师注册
             $teacher = new TeacherModel();
             $result = $teacher->register($data);

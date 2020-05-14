@@ -37,7 +37,7 @@ class LoginController extends Controller
             $teacher = new TeacherModel();
             if($teacher->checkPassword($t_id,$t_password)){
                 session("teacher",$t_id);
-                $this->success("登录成功",url("Teacher/index"));
+                $this->success("登录成功",url("teacher/index"));
             }else{
                 $this->error("登录失败，用户名或密码错误",url("Index/index"));
             }
