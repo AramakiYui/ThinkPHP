@@ -36,12 +36,42 @@ class StudentModel extends Model
         return Db::table("student")->where("stu_id",$stu_id)->find();
     }
     public function ListOfPublished(){
-        return Db::table("time")->join("teacher","time.t_id=teacher.t_id")->select();
+        return Db::table("time")->join("teacher","time.t_id=teacher.t_id")->where("free",0)->select();
     }
     public function ListOfSubscribed($stu_id){
         return Db::table("time")->join("subscribe"," time.seq=subscribe.seq and stu_id=$stu_id")
                                        ->join("teacher"," time.t_id=teacher.t_id")
                                         ->select();
+    }
+    public function searchByName($search){
+        $searched = "%".$search["search"]."%";
+        return Db::table("teacher")
+                    ->join("time","teacher.t_id=time.t_id")
+                    ->where("free",0)
+                    ->where("t_name","like","$searched")
+                    ->select();
+    }
+    public function searchByTime($search){
+        if(empty($search["date"])){
+            return DB::table("teacher")
+                        ->join("time","time.t_id=teacher.t_id")
+                        ->where("free",0)
+                        ->where("time_seg",$search["time_seg"])
+                        ->select();
+        }elseif(empty($search["time_seg"])){
+            return DB::table("teacher")
+                ->join("time","time.t_id=teacher.t_id")
+                ->where("free",0)
+                ->where("date",$search["date"])
+                ->select();
+        }else{
+            return DB::table("teacher")
+                ->join("time","time.t_id=teacher.t_id")
+                ->where("free",0)
+                ->where("date",$search["date"])
+                ->where("time_seg",$search["time_seg"])
+                ->select();
+        }
     }
 //注册函数
     //@param $teacher 学生的信息数组

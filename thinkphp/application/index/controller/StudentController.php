@@ -56,9 +56,13 @@ class StudentController extends Controller
         $subscribe = new StudentModel();
         $subscribeRes = $subscribe->subscribe($stu_data["seq"],$stu_data["stu_id"]);
         if($subscribeRes == -1){
-            $this->error("预约失败");
+            echo "<script>alert('预约失败')</script>";
+            return $this->subscribeView();
+//            $this->error("预约失败");
         }else{
-            $this->success("预约成功");
+            echo "<script>alert('预约成功')</script>";
+            return $this->subscribeView();
+//            $this->success("预约成功");
         }
     }
     public function logOff(){
@@ -93,15 +97,21 @@ class StudentController extends Controller
         $edit = Request::instance()->post();
 //        print_r($edit);
         if(session("student") != $edit["stu_id"]){
-            $this->error("您无法修改别人的信息");
+            echo "<script>alert('您无法修改别人的信息')</script>";
+            return $this->informationView();
+            //$this->error("您无法修改别人的信息");
         }else{
             $updateC = new StudentModel();
             $res = $updateC->editInformation($edit);
 //            print_r($edit);
             if($res == 0){
-                $this->error("修改失败");
+                echo "<script>alert('修改失败')</script>";
+                return $this->informationView();
+//                $this->error("修改失败");
             }else{
-                $this->success("修改成功");
+                echo "<script>alert('修改成功')</script>";
+                return $this->informationView();
+//                $this->success("修改成功");
             }
         }
     }
@@ -114,10 +124,36 @@ class StudentController extends Controller
             $deleteC = new StudentModel();
             $res = $deleteC->deleteFromSQL($delete);
             if($res == 0){
-                $this->error("操作失败");
+                echo "<script>alert('操作失败')</script>";
+                return $this->managerView();
+//                $this->error("操作失败");
             }else{
-                $this->success("操作成功");
+                echo "<script>alert('操作成功')</script>";
+                return $this->managerView();
+//                $this->success("操作成功");
             }
         }
+    }
+    public function searchByName(){
+        $search = Request::instance()->param();
+        $student = new StudentModel();
+        $stu_data = $student->getDataFromSQL(session("student"));
+        $dataSearched = $student->searchByName($search);
+        $this->assign("time",$dataSearched);
+        $this->assign("stu_data",$stu_data);
+        return $this->fetch("stu_subscribe");
+    }
+    public function searchByTime(){
+        $search = Request::instance()->param();
+        if(empty($search["date"]) && empty($search["time_seg"])){
+            echo "<script>alert('查询参数缺失')</script>";
+            return $this->subscribeView();
+        }
+        $student = new StudentModel();
+        $stu_data = $student->getDataFromSQL(session("student"));
+        $dataSearched = $student->searchByTime($search);
+        $this->assign("time",$dataSearched);
+        $this->assign("stu_data",$stu_data);
+        return $this->fetch("stu_subscribe");
     }
 }

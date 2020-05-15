@@ -64,9 +64,6 @@ class TeacherController extends Controller
             $add = new TeacherModel();
             $result = $add->publish($time);
             switch($result){
-//                case -1: $this->error("地点和已有的地点冲突","\index\Teacher\index"); break;
-//                case -2: $this->error("时间和已发布的时间有冲突","\index\Teacher\index"); break;
-//                default : $this->success("发布成功","/index/Teacher/index/");
                 case -1: $this->error("地点和已有的地点冲突"); break;
                 case -2: $this->error("时间和已发布的时间有冲突"); break;
                 default : $this->success("发布成功");
