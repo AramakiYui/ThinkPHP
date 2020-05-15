@@ -31,8 +31,17 @@ class StudentModel extends Model
             return false;
         }
     }
+//查找操作
     public function getDataFromSQL($stu_id){
         return Db::table("student")->where("stu_id",$stu_id)->find();
+    }
+    public function ListOfPublished(){
+        return Db::table("time")->join("teacher","time.t_id=teacher.t_id")->select();
+    }
+    public function ListOfSubscribed($stu_id){
+        return Db::table("time")->join("subscribe"," time.seq=subscribe.seq and stu_id=$stu_id")
+                                       ->join("teacher"," time.t_id=teacher.t_id")
+                                        ->select();
     }
 //注册函数
     //@param $teacher 学生的信息数组
@@ -65,14 +74,36 @@ class StudentModel extends Model
     public function ListOfMy($stu_id){
         return Db::table("subscribe")->where("stu_id",$stu_id)->find();
     }
-    public function subscribe($t_data,$stu_id){
-        $seq = Db::table("time")->where($t_data)->value("seq");
-        $t_id = Db::table("time")->where($t_data)->value("t_id");
+
+    public function subscribe($seq,$stu_id){
+        $t_id = Db::table("time")->where("seq",$seq)->value("t_id");
         $dataInsert = array("seq"=>"$seq","t_id"=>"$t_id","stu_id"=>"$stu_id");
-        if($seq !== null && $t_id !== null && $stu_id !== null) {
-            return Db::table("subscirbe")->insert("$dataInsert");
+        $free = array("free" => 2);
+        if($seq != null && $t_id != null && $stu_id != null) {
+            $res1 =  Db::table("subscribe")->insert($dataInsert);
+            $res2 =  Db::table("time")->where("seq",$seq)->update($free);
+            return $res1 & $res2;
         }else{
             return -1;
         }
+    }
+    public function editInformation($edit){
+        $update = array(
+            "stu_name"    =>$edit["stu_name"],
+            "stu_sex"     =>$edit["stu_sex"],
+            "stu_email"   =>$edit["stu_email"],
+            "stu_phone"   =>$edit["stu_phone"]
+        );
+        $where = array("stu_id"=>$edit["stu_id"]);
+        return Db::table("student")->where($where)->update($update);
+    }
+    public function deleteFromSQL($time){
+        $delete = array(
+            "seq"   =>$time["seq"],
+        );
+        $update = array("free"=>"0");
+        $res1 = Db::table("subscribe")->where($delete)->delete();
+        $res2 = Db::table("time")->where($delete)->update($update);
+        return $res1 & $res2;
     }
 }

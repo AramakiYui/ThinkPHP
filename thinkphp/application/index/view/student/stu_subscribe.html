@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{block name="title"}预约时间管理{/block}</title>
+    <link rel="stylesheet" type="text/css" href="\static\bootstrap-3.4.1-dist\css\bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+ 
+<body>
+    <div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span></button> 
+                        <a class="navbar-brand" href="{:url('http://www.schoolsubcribe/index.php/index/Student/index')}">我的主页</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">时 间 管 理<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                     <a href="{:url('http://www.schoolsubcribe/index.php/index/Student/managerView')}">管理我的预约</a>
+                                </li>
+                                <li>
+                                     <a href="{:url('http://www.schoolsubcribe/index.php/index/Student/subscribeView')}">预约新的时间</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+
+
+                    <!-- <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" />
+                        </div> <button type="submit" class="btn btn-default">Submit</button>
+                    </form> -->
+
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                             <a>欢迎您！{$stu_data.stu_name}同学</a>
+                        </li>
+
+                        <li class="dropdown">
+                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人中心<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                     <a href="{:url('http://www.schoolsubcribe/index.php/index/Student/informationView')}">我的资料</a>
+                                </li>
+                            
+                                <li class="divider">
+                                </li>
+                                <li>
+                                     <a href="{:url('http://www.schoolsubcribe/index.php/index/Student/logOff')}">退出登录</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    </div>
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            
+            <h3 class="text-left">
+                预约新的时间
+            </h3>
+            
+        </div>
+
+
+        <div class="col-md-4 column">     
+            <div>
+                <label>按教师名查询</label>
+                <br>
+                <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" />
+                        </div> <button type="submit" class="btn btn-default">查找</button>
+                    </form>
+            </div>
+        </div>
+
+
+        <div class="col-md-8 column">
+            <label>按时间查询</label>
+        <br>
+        <form class="navbar-form navbar-left" role="search">
+                
+                <div class="form-group">
+                    <input class="form-control" type="date" placeholder="年/月/日">
+                    <select class="form-control" type="combobox">
+                      <option></option>
+                      <option value="option1">第一大节</option>
+                      <option value="option2">第二大节</option>
+                      <option value="option3">第三大节</option>
+                      <option value="option4">第四大节</option>
+                    </select>
+                    
+                </div>
+                <button type="submit" class="btn btn-default">查找</button>
+            </form>
+        </div>
+            
+<div class="col-md-12 column">
+            
+            <h3 class="text-left">
+                <br>
+            </h3>
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>时间</th>
+                        <th>老师名</th>
+                        <th>地点</th>
+                        <th>课程名</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {volist name="time" id="value"}
+                <tr>
+                    {if $value.free == 0}
+                    <th>{$value.seq}</th>
+                    <th>{$value.date} {$value.time_seg}</th>
+                    <th>{$value.t_name}</th>
+                    <th>{$value.place}</th>
+                    <th>{$value.class}</th>
+                    <td>
+                        <a href="{:url('http://www.schoolsubcribe/index.php/index/Student/subscribeTime','seq='.$value.seq.'&stu_id='.$stu_data.stu_id )}"><button type="button" class="btn btn-default btn-primary">预约</button></a>
+                    </td>
+                    {else /}{/if}
+                </tr>
+                {/volist}
+                    
+                </tbody>
+            </table>
+        </div>
+
+
+
+        
+
+    </div>
+</div>
+
+ 
+
+
+
+<body>
+ 

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{block name="title"}预约时间管理{/block}</title>
+    <link rel="stylesheet" type="text/css" href="\static\bootstrap-3.4.1-dist\css\bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+ 
+<body>
+	<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					 	<span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span></button> 
+                        <a class="navbar-brand" href="{:url('http://www.schoolsubcribe/index.php/index/Student/index')}">我的主页</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">时 间 管 理<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									 <a href="{:url('http://www.schoolsubcribe/index.php/index/Student/managerView')}">管理我的预约</a>
+								</li>
+								<li>
+									 <a href="{:url('http://www.schoolsubcribe/index.php/index/Student/subscribeView')}" >预约新的时间</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							 <a>欢迎您！{$stu_data.stu_name}同学</a>
+						</li>
+
+						<li class="dropdown">
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人中心<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									 <a href="{:url('http://www.schoolsubcribe/index.php/index/Student/informationView')}">我的资料</a>
+								</li>
+							
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="{:url('http://www.schoolsubcribe/index.php/index/Student/logOff')}">退出登录</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				
+			</nav>
+		</div>
+	</div>
+	</div>
+
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row clearfix">
+				<div class="col-md-8 column">
+					<div class="carousel slide" id="carousel-586328">
+						<ol class="carousel-indicators">
+							<li class="active" data-slide-to="0" data-target="#carousel-586328">
+							</li>
+							<li data-slide-to="1" data-target="#carousel-586328">
+							</li>
+							<li data-slide-to="2" data-target="#carousel-586328">
+							</li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="item active">
+								<img alt="" src="/images/default.jpg" />
+								<div class="carousel-caption">
+									<h4>
+										First Thumbnail label
+									</h4>
+									<p>
+										Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+									</p>
+								</div>
+							</div>
+							<div class="item">
+								<img alt="" src="/images/default1.jpg" />
+								<div class="carousel-caption">
+									<h4>
+										Second Thumbnail label
+									</h4>
+									<p>
+										Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+									</p>
+								</div>
+							</div>
+							<div class="item">
+								<img alt="" src="/images/default2.jpg" />
+								<div class="carousel-caption">
+									<h4>
+										Third Thumbnail label
+									</h4>
+									<p>
+										Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+									</p>
+								</div>
+							</div>
+						</div> <a class="left carousel-control" href="#carousel-586328" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-586328" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+					</div>
+				</div>
+				<div class="col-md-4 column">
+					<div class="page-header">
+						<h1>
+							今天是
+							<br> 
+							<small>xxxx年xx月xx日</small>
+							<br>
+							<small>xx:xx:xx</small>
+						</h1>
+					</div>
+				</div>
+			</div>
+			<h3 class="text-left">
+				待办事项
+			</h3>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>编号</th>
+						<th>时间</th>
+						<th>地点</th>
+						<th>课程</th>
+						<th>老师名</th>
+					</tr>
+				</thead>
+				<tbody>
+				<tr>
+					{volist name="time" id="value"}
+				<tr>
+					{if $value.free == 2}
+					<th>{$value.seq}</th>
+					<th>{$value.date} {$value.time_seg}</th>
+					<th>{$value.place}</th>
+					<th>{$value.class}</th>
+					<th>{$value.t_name}</th>
+					{else /}{/if}
+				</tr>
+				{/volist}
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+   
+<body>
+ 

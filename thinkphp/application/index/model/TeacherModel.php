@@ -108,6 +108,7 @@ class TeacherModel extends Model
             "t_name"    =>$edit["t_name"],
             "t_sex"     =>$edit["t_sex"],
             "t_age"     =>$edit["t_age"],
+            "t_mail"    =>$edit["t_mail"],
             "t_phone"   =>$edit["t_phone"]
         );
         $where = array("t_id"=>$edit["t_id"]);
