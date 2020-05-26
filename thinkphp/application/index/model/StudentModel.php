@@ -73,6 +73,10 @@ class StudentModel extends Model
                 ->select();
         }
     }
+    //查看学生已订阅的时间
+    public function ListOfMy($stu_id){
+        return Db::table("subscribe")->where("stu_id",$stu_id)->find();
+    }
 //注册函数
     //@param $teacher 学生的信息数组
     function register($student){
@@ -100,10 +104,7 @@ class StudentModel extends Model
             return Db::table("time")->where("t_name",$t_name)->page("$page,10")->find();
         }
     }
-    //查看学生已订阅的时间
-    public function ListOfMy($stu_id){
-        return Db::table("subscribe")->where("stu_id",$stu_id)->find();
-    }
+
 
     public function subscribe($seq,$stu_id){
         $t_id = Db::table("time")->where("seq",$seq)->value("t_id");

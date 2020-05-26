@@ -80,9 +80,6 @@
                                 <li>
                                      <a href="{:url('http://www.schoolsubcribe/index.php/index/Teacher/information')}">我的资料</a>
                                 </li>
-                                <li>
-                                     <a href="#">我的通知</a>
-                                </li>
                             
                                 <li class="divider">
                                 </li>
@@ -165,6 +162,12 @@
             </dd>
           </dl>
 
+            <dl class="form-group">
+                <dt><label for="user_profile_email">邮箱</label></dt>
+                <dd><input class="form-control" type="text" name="t_email" id="user_profile_email" value="{$t_data.t_email}">
+                </dd>
+            </dl>
+
 
         <dl class="form-group">
             <dt><label for="user_profile_age">年龄</label></dt>
@@ -191,56 +194,24 @@
         </div>
     </div>
 </div>
-
-
-
-<!--        <div id="fabu" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
-<!--            <div class="modal-dialog">-->
-<!--                <div class="modal-content">-->
-<!--                    <div class="modal-header">-->
-<!--                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
-<!--                        <h1 class="text-center">发布新的时间</h1>-->
-<!--                    </div>-->
-<!--                    <div class="modal-body">-->
-<!--                        <form class="form-group" action="">-->
-<!--                            <div class="form-group">-->
-<!--                                <label for="">日期</label>-->
-<!--                                <input class="form-control" type="date" placeholder="年/月/日">-->
-<!--                            </div>-->
-<!--                            <div class="form-group">-->
-<!--                                <label for="">节次</label>-->
-<!--                                <br>-->
-<!--                                <div class="btn-group" data-toggle="buttons">-->
-<!--                                <label class="btn btn-primary">-->
-<!--                                    <input type="radio" name="options" id="option1">第一大节(08:00~10:00)-->
-<!--                                </label>-->
-<!--                                <label class="btn btn-primary">-->
-<!--                                    <input type="radio" name="options" id="option2">第二大节(10:00~12:00)-->
-<!--                                </label>-->
-<!--                                <br>-->
-<!--                                <label class="btn btn-primary">-->
-<!--                                    <input type="radio" name="options" id="option3">第三大节(14:00~16:00)-->
-<!--                                 </label>   -->
-<!--                                <label class="btn btn-primary">-->
-<!--                                    <input type="radio" name="options" id="option4">第四大节(16:00~18:00)-->
-<!--                                </label>-->
-<!--                                 </div>-->
-<!--                            </div>-->
-<!--                            <div class="form-group">-->
-<!--                                <label for="">地点</label>-->
-<!--                                <input class="form-control" type="text" placeholder="请输入教室名">-->
-<!--                            </div>-->
-<!--                            -->
-<!--                            <div class="text-right">-->
-<!--                                <button class="btn btn-primary" type="submit" style="background-color: #3a8cd2b3;border: 0px solid transparent;">提交</button>-->
-<!--                                <button class="btn btn-danger" data-dismiss="modal" style="background-color: #fb5e5999;border: 0px solid transparent;">取消</button>-->
-<!--                            </div>-->
-
-<!--                        </form>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>  -->
+    <script>
+        $(function(){
+            //得到当前时间
+            var date_now = new Date();
+            //得到当前年份
+            var year = date_now.getFullYear();
+            //得到当前月份
+            //注：
+            //  1：js中获取Date中的month时，会比当前月份少一个月，所以这里需要先加一
+            //  2: 判断当前月份是否小于10，如果小于，那么就在月份的前面加一个 '0' ， 如果大于，就显示当前月份
+            var month = date_now.getMonth()+1 < 10 ? "0"+(date_now.getMonth()+1) : (date_now.getMonth()+1);
+            //得到当前日子（多少号）
+            var date = date_now.getDate() < 10 ? "0"+date_now.getDate() : date_now.getDate();
+            //设置input标签的max属性
+            $("#date_publish").attr("min",year+"-"+month+"-"+date);
+            $("#date_publish1").attr("min",year+"-"+month+"-"+date);
+        })
+    </script>
     <div id="fabu" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -252,7 +223,7 @@
                     <form class="form-group" action="{:url('http://www.schoolsubcribe/index.php/index/Teacher/publishTime')}" method="post">
                         <div class="form-group">
                             <label for="">日期</label>
-                            <input class="form-control" type="date" value="" name="date">
+                            <input class="form-control" type="date" value="" id="date_publish" name="date">
                         </div>
                         <div class="form-group">
                             <label for="">节次</label>

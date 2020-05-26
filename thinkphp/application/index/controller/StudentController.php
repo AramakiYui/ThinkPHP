@@ -119,7 +119,7 @@ class StudentController extends Controller
         $delete = Request::instance()->param();
 //        print_r($delete);
         if(session("student") != $delete["stu_id"]){
-            $this->error("您无法删除不由您发布的预约");
+            $this->error("您无法删除不由您预约的时间");
         }else{
             $deleteC = new StudentModel();
             $res = $deleteC->deleteFromSQL($delete);

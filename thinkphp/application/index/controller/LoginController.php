@@ -8,7 +8,7 @@ use app\index\model\StudentModel;
 use app\index\model\TeacherModel;
 use think\Controller;
 use think\Request;
-class LoginController extends Controller
+class LoginController extends IndexController
 {
     public function index()
     {

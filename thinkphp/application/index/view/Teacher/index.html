@@ -66,10 +66,6 @@
 								<li>
 									 <a href="{:url('http://www.schoolsubcribe/index.php/index/Teacher/information')}">我的资料</a>
 								</li>
-								<li>
-									 <a href="#">我的通知</a>
-								</li>
-							
 								<li class="divider">
 								</li>
 								<li>
@@ -104,10 +100,10 @@
 								<img alt="" src="/images/default.jpg" />
 								<div class="carousel-caption">
 									<h4>
-										First Thumbnail label
+										百年工大
 									</h4>
 									<p>
-										Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+										规格严格，功夫到家
 									</p>
 								</div>
 							</div>
@@ -115,10 +111,10 @@
 								<img alt="" src="/images/default1.jpg" />
 								<div class="carousel-caption">
 									<h4>
-										Second Thumbnail label
+										百年工大
 									</h4>
 									<p>
-										Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+										规格严格，功夫到家
 									</p>
 								</div>
 							</div>
@@ -126,10 +122,10 @@
 								<img alt="" src="/images/default2.jpg" />
 								<div class="carousel-caption">
 									<h4>
-										Third Thumbnail label
+										百年工大
 									</h4>
 									<p>
-										Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+										规格严格，功夫到家
 									</p>
 								</div>
 							</div>
@@ -142,11 +138,8 @@
 				<div class="col-md-4 column">
 					<div class="page-header">
 						<h1>
-							今天是
-							<br> 
-							<small>xxxx年xx月xx日</small>
-							<br>
-							<small>xx:xx:xx</small>
+							今天是<br>
+							{:date('Y年m月d日')}
 						</h1>
 					</div>
 				</div>
@@ -184,7 +177,23 @@
 		</div>
 	</div>
 </div>
-
+	<script>
+		$(function(){
+			//得到当前时间
+			var date_now = new Date();
+			//得到当前年份
+			var year = date_now.getFullYear();
+			//得到当前月份
+			//注：
+			//  1：js中获取Date中的month时，会比当前月份少一个月，所以这里需要先加一
+			//  2: 判断当前月份是否小于10，如果小于，那么就在月份的前面加一个 '0' ， 如果大于，就显示当前月份
+			var month = date_now.getMonth()+1 < 10 ? "0"+(date_now.getMonth()+1) : (date_now.getMonth()+1);
+			//得到当前日子（多少号）
+			var date = date_now.getDate() < 10 ? "0"+date_now.getDate() : date_now.getDate();
+			//设置input标签的max属性
+			$("#date_publish").attr("min",year+"-"+month+"-"+date);
+		})
+	</script>
 
    <div id="fabu" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -197,7 +206,7 @@
                         <form class="form-group" action="{:url('http://www.schoolsubcribe/index.php/index/Teacher/publishTime')}" method="post">
                             <div class="form-group">
                                 <label for="">日期</label>
-                                <input class="form-control" type="date" value="" name="date">
+                                <input class="form-control" type="date" value="" name="date" id="date_publish" aria-valuemin="">
                             </div>
                             <div class="form-group">
                                 <label for="">节次</label>

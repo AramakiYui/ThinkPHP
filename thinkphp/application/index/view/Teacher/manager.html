@@ -64,9 +64,6 @@
                                 <li>
                                      <a href="{:url('http://www.schoolsubcribe/index.php/index/Teacher/information')}">我的资料</a>
                                 </li>
-                                <li>
-                                     <a href="#">我的通知</a>
-                                </li>
                             
                                 <li class="divider">
                                 </li>
@@ -107,11 +104,14 @@
                     <th>{$value.seq}</th>
                     <th>{$value.date} {$value.time_seg}</th>
                     <th>{$value.place}</th>
-                    <th>{$value.free}</th>
+                    <th>{if $value.free == 0}未预约{else /}{/if}
+                        {if $value.free == 1}未完成{else /}{/if}
+                        {if $value.free == 2}已预约{else /}{/if}
+                        {if $value.free == 3}已完成{else /}{/if}</th>
                     <th>{$value.class}</th>
                     <th>{$value.stu_name}</th>
                     <td>
-                        <button type="button" class="btn btn-default btn-primary {if $value.free == 0}disabled{else /}" onclick="values({$value.seq})"{/if}">修改</button>
+                        <button type="button" class="btn btn-default btn-primary {if $value.free == 2}disabled{else /}" onclick="values({$value.seq})"{/if}">修改</button>
 
                         <a href="{:url('http://www.schoolsubcribe/index.php/index/Teacher/deleteTime','t_id='.$value.t_id.'&delete=1&seq='.$value.seq)}">
                         <button type="button" class="btn btn-default btn-danger">删除</button></a>
@@ -142,7 +142,7 @@
                         <form class="form-group" action="{:url('http://www.schoolsubcribe/index.php/index/Teacher/editTime')}" method="post">
                             <div class="form-group">
                                 <label for="">日期</label>
-                                <input class="form-control" type="date" placeholder="年/月/日" name="date">
+                                <input class="form-control" type="date" placeholder="年/月/日" id="date_publish1" name="date">
                             </div>
                             <div class="form-group">
                                 <label for="">节次</label>
@@ -181,8 +181,25 @@
                     </div>
                 </div>
             </div>
-        </div>     
-
+        </div>
+    <script>
+        $(function(){
+            //得到当前时间
+            var date_now = new Date();
+            //得到当前年份
+            var year = date_now.getFullYear();
+            //得到当前月份
+            //注：
+            //  1：js中获取Date中的month时，会比当前月份少一个月，所以这里需要先加一
+            //  2: 判断当前月份是否小于10，如果小于，那么就在月份的前面加一个 '0' ， 如果大于，就显示当前月份
+            var month = date_now.getMonth()+1 < 10 ? "0"+(date_now.getMonth()+1) : (date_now.getMonth()+1);
+            //得到当前日子（多少号）
+            var date = date_now.getDate() < 10 ? "0"+date_now.getDate() : date_now.getDate();
+            //设置input标签的max属性
+            $("#date_publish").attr("min",year+"-"+month+"-"+date);
+            $("#date_publish1").attr("min",year+"-"+month+"-"+date);
+        })
+    </script>
     <div id="fabu" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -194,7 +211,7 @@
                     <form class="form-group" action="{:url('http://www.schoolsubcribe/index.php/index/Teacher/publishTime')}" method="post">
                         <div class="form-group">
                             <label for="">日期</label>
-                            <input class="form-control" type="date" value="" name="date">
+                            <input class="form-control" type="date" value="" id="date_publish" name="date">
                         </div>
                         <div class="form-group">
                             <label for="">节次</label>
