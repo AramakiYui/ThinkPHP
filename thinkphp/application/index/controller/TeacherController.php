@@ -64,9 +64,6 @@ class TeacherController extends Controller
             $add = new TeacherModel();
             $result = $add->publish($time);
             switch($result){
-//                case -1: $this->error("地点和已有的地点冲突","\index\Teacher\index"); break;
-//                case -2: $this->error("时间和已发布的时间有冲突","\index\Teacher\index"); break;
-//                default : $this->success("发布成功","/index/Teacher/index/");
                 case -1: $this->error("地点和已有的地点冲突"); break;
                 case -2: $this->error("时间和已发布的时间有冲突"); break;
                 default : $this->success("发布成功");
@@ -87,10 +84,13 @@ class TeacherController extends Controller
         $this->assign("myTimeData",$published);
         $this->display("/Teacher/listOfPublished");
     }
+    //t_id 自己的用户名
+    //delete 1表示删除
+    //seq表示删除的编号
     public function deleteTime(){
 //        $delete = Request::instance()->get();
         $delete = Request::instance()->param();
-        print_r($delete);
+//        print_r($delete);
         if(session("teacher") != $delete["t_id"]){
             $this->error("您无法删除不由您发布的预约");
         }else{
@@ -135,7 +135,9 @@ class TeacherController extends Controller
             }
         }
     }
+    public function logOff(){
+        session("teacher",null);
+        $this->success("注销成功",url("index/Index/index"));
+    }
 }
-//t_id 自己的用户名
-//delete 1表示删除
-//seq表示删除的编号
+

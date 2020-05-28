@@ -7,8 +7,9 @@ namespace app\index\controller;
 use app\index\model\StudentModel;
 use app\index\model\TeacherModel;
 use think\Controller;
+use think\Db;
 use think\Request;
-class LoginController extends Controller
+class LoginController extends IndexController
 {
     public function index()
     {
@@ -28,6 +29,29 @@ class LoginController extends Controller
         if($post["password"] == null) $this->error("密码不能为空",url("\Index\index"));
         return true;
     }
+
+    public function Time_update()
+    {
+        $now_time = date("y-m-d");
+        foreach(Db::table("time")->select() as $db)
+        {
+            if(strtotime($now_time) > strtotime($db['date']))
+            {
+                if($db['free'] == 2)
+                {
+                    $db['free']=3;
+                    Db::table("time")->update($db);
+                }
+                elseif ($db['free'] == 0)
+                {
+                    $db['free']=1;
+                    Db::table("time")->update($db);
+                }
+            }
+        }
+        return true;
+    }
+
     public function check(){
         $this->inputCheck();
         $tLogin = Request::instance()->post('tLogin');
@@ -37,6 +61,7 @@ class LoginController extends Controller
             $teacher = new TeacherModel();
             if($teacher->checkPassword($t_id,$t_password)){
                 session("teacher",$t_id);
+                $this->Time_update();
                 $this->success("登录成功",url("teacher/index"));
             }else{
                 $this->error("登录失败，用户名或密码错误",url("Index/index"));
@@ -47,7 +72,9 @@ class LoginController extends Controller
             $student = new StudentModel();
             if($student->checkPassword($stu_id,$stu_password)){
                 session("student",$stu_id);
+                $this->Time_update();
                 $this->success("登录成功",url("Student/index"));
+
             }else{
                 $this->error("登录失败,用户名或密码错误",url("Index/index"));
             }

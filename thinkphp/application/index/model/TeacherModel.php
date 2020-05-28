@@ -62,7 +62,7 @@ class TeacherModel extends Model
         return Db::table("subscribe")->where("t_id",$t_id)->select();
     }
     public function nameOfSubscribedStu($seq){
-        return Db::table("time")->join("subscribe s","time.seq=s.seq")
+        return Db::table("time")->join("subscribe s","$seq=s.seq")
                                        ->join("student stu","s.stu_id=stu.stu_id")
                                        ->value("stu_name");
     }
@@ -108,6 +108,7 @@ class TeacherModel extends Model
             "t_name"    =>$edit["t_name"],
             "t_sex"     =>$edit["t_sex"],
             "t_age"     =>$edit["t_age"],
+            "t_email"    =>$edit["t_email"],
             "t_phone"   =>$edit["t_phone"]
         );
         $where = array("t_id"=>$edit["t_id"]);
