@@ -20,7 +20,7 @@ class StudentModel extends Model
     }
     //密码加密函数
     protected function encryptPassword($password){
-        return sha1(md5('$password').'sui_ji_shu');
+        return sha1(md5("$password").'sui_ji_shu');
     }
     //登录函数
     public function checkPassword($stu_id,$stu_password)
@@ -36,11 +36,15 @@ class StudentModel extends Model
         return Db::table("student")->where("stu_id",$stu_id)->find();
     }
     public function ListOfPublished(){
-        return Db::table("time")->join("teacher","time.t_id=teacher.t_id")->where("free",0)->select();
+        return Db::table("time")->join("teacher","time.t_id=teacher.t_id")
+            ->where("free",0)
+            ->order('date')
+            ->select();
     }
     public function ListOfSubscribed($stu_id){
         return Db::table("time")->join("subscribe"," time.seq=subscribe.seq and stu_id=$stu_id")
                                        ->join("teacher"," time.t_id=teacher.t_id")
+                                        ->order('date')
                                         ->select();
     }
     public function searchByName($search){

@@ -20,7 +20,7 @@ class TeacherModel extends Model
     }
     //密码加密函数
     protected function encryptPassword($password){
-        return sha1(md5('$password').'sui_ji_shu');
+        return sha1(md5("'$password").'sui_ji_shu');
     }
     //登录函数
     public function checkPassword($t_id,$t_password)
@@ -56,15 +56,20 @@ class TeacherModel extends Model
 //时间表相关
     //查找操作
     public function ListOfPublished($t_id){
-        return Db::table("time")->where("t_id",$t_id)->select();
+        return Db::table("time")->where("t_id",$t_id)
+                                        ->order('date')
+                                        ->select();
     }
     public function ListOfSubscribed($t_id){
-        return Db::table("subscribe")->where("t_id",$t_id)->select();
+        return Db::table("subscribe")->where("t_id",$t_id)
+                                            ->order('seq')
+                                            ->select();
     }
     public function nameOfSubscribedStu($seq){
         return Db::table("time")->join("subscribe s","$seq=s.seq")
                                        ->join("student stu","s.stu_id=stu.stu_id")
                                        ->value("stu_name");
+
     }
     //发布操作
     public function publish($time){
