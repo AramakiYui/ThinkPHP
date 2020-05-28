@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{block name="title"}预约时间管理{/block}</title>
+    <link rel="stylesheet" type="text/css" href="\static\bootstrap-3.4.1-dist\css\bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+ 
+<body>
+    <div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span></button> 
+                        <a class="navbar-brand" href="{:url('http://www.schoolsubcribe/index.php/index/Student/index')}">我的主页</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">时间管理<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{:url('http://www.schoolsubcribe/index.php/index/Student/managerView')}">管理我的预约</a>
+                                </li>
+                                <li>
+                                    <a href="{:url('http://www.schoolsubcribe/index.php/index/Student/subscribeView')}" >预约新的时间</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                             <a>欢迎您！{$stu_data.stu_name}同学</a>
+                        </li>
+
+                        <li class="dropdown">
+                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人中心<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                     <a href="{:url('http://www.schoolsubcribe/index.php/index/Student/informationView')}">我的资料</a>
+                                </li>
+                            
+                                <li class="divider">
+                                </li>
+                                <li>
+                                     <a href="{:url('http://www.schoolsubcribe/index.php/index/Student/logOff')}">退出登录</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    </div>
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            
+            <h3 class="text-left">
+                管理我的预约
+            </h3>
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>时间</th>
+                        <th>地点</th>
+                        <th>预约状态</th>
+                        <th>课程名</th>
+                        <th>老师名</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {volist name="time" id="value"}
+                    <tr>
+                        <th>{$value.seq}</th>
+                        <th>{$value.date} {$value.time_seg}</th>
+                        <th>{$value.place}</th>
+                        <th>{if $value.free==2}已预约{else /}已完成{/if}</th>
+                        <th>{$value.class}</th>
+                        <th>{$value.t_name}</th>
+                        <td><a href="{:url('http://www.schoolsubcribe/index.php/index/Student/deleteTime','stu_id='.$value.stu_id.'&seq='.$value.seq)}"><button type="button" class="btn btn-default btn-danger "{if $value.free!=2}disabled{else /}{/if}>取消预约</button></a> </td>
+                    </tr>
+                    {/volist}
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+ 
+
+
+
+<body>
+ 

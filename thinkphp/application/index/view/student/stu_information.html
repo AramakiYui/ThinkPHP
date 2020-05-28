@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{block name="title"}预约时间管理{/block}</title>
+    <link rel="stylesheet" type="text/css" href="\static\bootstrap-3.4.1-dist\css\bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+    body {
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #24292e;
+    background-color: #fff;
+
+}
+
+</style>
+
+
+
+
+</head>
+ 
+<body>
+    <div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span></button> 
+                        <a class="navbar-brand" href="#">我的主页</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">时间管理<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                     <a href="{:url('http://www.schoolsubcribe/index.php/index/Student/managerView')}">管理我的预约</a>
+                                </li>
+                                <li>
+                                     <a href="{:url('http://www.schoolsubcribe/index.php/index/Student/subscribeView')}">预约新的时间</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                             <a>欢迎您！{$stu_data.stu_name}同学</a>
+                        </li>
+
+                        <li class="dropdown">
+                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人中心<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                     <a href="{:url('http://www.schoolsubcribe/index.php/index/Student/informationView')}">我的资料</a>
+                                </li>
+                            
+                                <li class="divider">
+                                </li>
+                                <li>
+                                     <a href="{:url('http://www.schoolsubcribe/index.php/index/Student/logOff')}">退出登录</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    </div>
+
+<div class="container">
+    <div class="row clearfix">
+
+        <div class="col-md-12">
+            <h3 class="text-left">
+                <span class="glyphicon glyphicon-user"></span>
+                我的信息
+            </h3> 
+            <br>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 column">
+
+            <h1 style="margin:0px" align="center">
+                <span class="nowrap"><b>{$stu_data.stu_name}</b></span>
+            </h1>
+
+
+<form action="{:url('http://www.schoolsubcribe/index.php/index/Student/editInformation')}" accept-charset="UTF-8" method="post" >
+        <div>
+            <dl class="form-group">
+              <dt><label for="user_profile_account_name">学号</label></dt>
+              <dd>
+
+                <input class="form-control" type="text" name="stu_id" id="user_profile_account_name" readonly="readonly" value="{$stu_data.stu_id}">
+                <div class="note">
+                  学号不可修改！
+                </div>
+              </dd>
+            </dl>
+
+            <dl class="form-group">
+              <dt><label for="user_profile_account_iden">身份</label></dt>
+              <dd>
+
+                <input class="form-control" type="text" name="stu_iden" id="user_profile_account_iden" readonly="readonly" value="学生">
+                <div class="note">
+                  身份不可修改！
+                </div>
+              </dd>
+            </dl>
+
+
+        <dl class="form-group">
+            <dt><label for="user_profile_name">姓名</label></dt>
+            <dd><input class="form-control" type="text" name="stu_name" id="user_profile_name" value="{$stu_data.stu_name}">
+            </dd>
+          </dl>
+
+
+          <dl class="form-group">
+            <dt><label for="user_profile_sex">性别</label></dt>
+            <dd class="d-inline-block">
+              <div>
+                  <select class="form-select form-select text-gray-light"  name="stu_sex" id="user_profile_sex">
+                    <option value="男">男</option>
+                    <option value="女">女</option>
+                    </select>
+              </div>
+            </dd>
+          </dl>
+
+
+        <dl class="form-group">
+            <dt><label for="user_profile_email">邮箱</label></dt>
+            <dd><input class="form-control" type="text" name="stu_email" id="user_profile_email" value="{$stu_data.stu_email}">
+            </dd>
+          </dl>
+
+
+        <dl class="form-group">
+            <dt><label for="user_profile_phone">手机号</label></dt>
+            <dd><input class="form-control" type="text" name="stu_phone" id="user_profile_phone" value="{$stu_data.stu_phone}">
+            </dd>
+          </dl>
+          
+        <input type="hidden" name="stu_id" value="{$stu_data.stu_id}">
+          <p><button type="submit" class="btn btn-primary">保存</button></p>
+        </div>
+</form>
+
+          
+        </div>
+    </div>
+</div>
+
+
+
+
+<body>
+ 
