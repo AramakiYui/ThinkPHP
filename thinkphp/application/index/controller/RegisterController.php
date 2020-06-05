@@ -43,14 +43,14 @@ class RegisterController extends LoginController
             'stu_password'          =>  'require',
             'stu_password_again'    =>  'require',]);
         $validateTea = new Validate([
-        't_id'		            =>	'require|number|length:6',
-        't_sex'                 =>  'require',
-        't_name'                =>  'require',
-        't_email'	            =>	'email',
-        't_phone'               =>  'number|length:11',
-        't_password'            =>  'require',
-        't_password_again'      =>  'require',
-        't_age'                 =>  'number|between:1,120']);
+            't_id'		            =>	'require|number|length:6',
+            't_sex'                 =>  'require',
+            't_name'                =>  'require',
+            't_email'	            =>	'email',
+            't_phone'               =>  'number|length:11',
+            't_password'            =>  'require',
+            't_password_again'      =>  'require',
+            't_age'                 =>  'number|between:1,120']);
 
         if(!isset($data["stu_id"])){
             if(!$validateTea->check($data)){
@@ -88,12 +88,12 @@ class RegisterController extends LoginController
         }else{//学生注册
             $student = new StudentModel();
             $result = $student->register($data);
-            if($result = -1){
-                $this->error("用户名已存在",url("\\"));
+            if($result == -1){
+                $this->error("用户名已存在",url("\Index\index"));
             }elseif($result == -2){
-                $this->error("两次密码输入不一致",url("\\"));
+                $this->error("两次密码输入不一致",url("\Index\index"));
             } else{
-                $this->success("注册成功，请登录",url("\\"));
+                $this->success("注册成功，请登录",url("\Index\index"));
             }
         }
     }

@@ -20,7 +20,7 @@ class StudentModel extends Model
     }
     //密码加密函数
     protected function encryptPassword($password){
-        return sha1(md5('$password').'sui_ji_shu');
+        return sha1(md5("$password").'sui_ji_shu');
     }
     //登录函数
     public function checkPassword($stu_id,$stu_password)
@@ -36,11 +36,15 @@ class StudentModel extends Model
         return Db::table("student")->where("stu_id",$stu_id)->find();
     }
     public function ListOfPublished(){
-        return Db::table("time")->join("teacher","time.t_id=teacher.t_id")->where("free",0)->select();
+        return Db::table("time")->join("teacher","time.t_id=teacher.t_id")
+            ->where("free",0)
+            ->order('date')
+            ->select();
     }
     public function ListOfSubscribed($stu_id){
         return Db::table("time")->join("subscribe"," time.seq=subscribe.seq and stu_id=$stu_id")
                                        ->join("teacher"," time.t_id=teacher.t_id")
+                                        ->order('date')
                                         ->select();
     }
     public function searchByName($search){
@@ -91,17 +95,16 @@ class StudentModel extends Model
 
             $data_ins["stu_password"] = $this->encryptPassword($student["stu_password"]);
             if($student["stu_password"] !== $student["stu_password_again"]) return -2;//两次密码不一样
-            $data_ins["stu_password"] = $this->encryptPassword($student["stu_password"]);
-            return Db::table("student")->insert($data_ins);
+            else return Db::table("student")->insert($data_ins);
         }
     }
 //预约相关
     //查看已发布的预约表
     public function scanTime($t_name,$page){
         if($t_name == "N/A"){
-            return Db::table("time")->page("$page,10")->find();
+            return Db::table("time")->page("$page,20")->find();
         }else{
-            return Db::table("time")->where("t_name",$t_name)->page("$page,10")->find();
+            return Db::table("time")->where("t_name",$t_name)->page("$page,20")->find();
         }
     }
 
