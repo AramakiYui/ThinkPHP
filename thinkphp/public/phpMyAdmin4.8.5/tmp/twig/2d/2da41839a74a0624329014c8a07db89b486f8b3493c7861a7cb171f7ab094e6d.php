@@ -65,6 +65,6 @@ class __TwigTemplate_1d04fd526af1cb28cec525fb9a753eb744a698c6560f145fe8f46e3271b
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "database/structure/favorite_anchor.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\database\\structure\\favorite_anchor.twig");
+        return new Twig_Source("", "database/structure/favorite_anchor.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\database\\structure\\favorite_anchor.twig");
     }
 }

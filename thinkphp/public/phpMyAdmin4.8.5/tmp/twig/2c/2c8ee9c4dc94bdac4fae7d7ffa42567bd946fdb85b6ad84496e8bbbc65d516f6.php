@@ -40,6 +40,6 @@ class __TwigTemplate_3abcba143392484ca24c7bff3627c977e47979e3ef19781cf5684ebceec
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "config/form_display/form_bottom.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\config\\form_display\\form_bottom.twig");
+        return new Twig_Source("", "config/form_display/form_bottom.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\config\\form_display\\form_bottom.twig");
     }
 }

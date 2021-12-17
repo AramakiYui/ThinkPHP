@@ -116,6 +116,6 @@ class __TwigTemplate_fb860faf1fb1101bcf85e56f3a30bb89015625bd38b6622418b40b4ea03
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "table/structure/optional_action_links.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\table\\structure\\optional_action_links.twig");
+        return new Twig_Source("", "table/structure/optional_action_links.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\table\\structure\\optional_action_links.twig");
     }
 }

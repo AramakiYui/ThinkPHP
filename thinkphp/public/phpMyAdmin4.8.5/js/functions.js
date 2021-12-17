@@ -60,7 +60,7 @@ var primary_indexes = [];
 var unique_indexes = [];
 
 /**
- * @var indexes array to hold 'Index' columns.
+ * @var indexes array to hold 'IndexController' columns.
  */
 var indexes = [];
 
@@ -2881,11 +2881,11 @@ AJAX.registerOnload('functions.js', function () {
                              */
                             var curr_last_row_index_string = $(curr_last_row).find('input:checkbox').attr('id').match(/\d+/)[0];
                             /**
-                             * @var curr_last_row_index Index of {@link curr_last_row}
+                             * @var curr_last_row_index IndexController of {@link curr_last_row}
                              */
                             var curr_last_row_index = parseFloat(curr_last_row_index_string);
                             /**
-                             * @var new_last_row_index   Index of the new row to be appended to {@link tables_table}
+                             * @var new_last_row_index   IndexController of the new row to be appended to {@link tables_table}
                              */
                             var new_last_row_index = curr_last_row_index + 1;
                             /**
@@ -3673,7 +3673,7 @@ function checkIndexName (form_id) {
     var $the_idx_name = $('#input_index_name');
     var $the_idx_choice = $('#select_index_choice');
 
-    // Index is a primary key
+    // IndexController is a primary key
     if ($the_idx_choice.find('option:selected').val() === 'PRIMARY') {
         $the_idx_name.val('PRIMARY');
         $the_idx_name.prop('disabled', true);

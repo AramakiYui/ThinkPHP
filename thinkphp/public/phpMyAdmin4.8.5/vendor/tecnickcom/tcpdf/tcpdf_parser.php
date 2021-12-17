@@ -303,7 +303,7 @@ class TCPDF_PARSER {
 		foreach ($sarr as $k => $v) {
 			if (($v[0] == '/') AND ($v[1] == 'Type') AND (isset($sarr[($k +1)]) AND ($sarr[($k +1)][0] == '/') AND ($sarr[($k +1)][1] == 'XRef'))) {
 				$valid_crs = true;
-			} elseif (($v[0] == '/') AND ($v[1] == 'Index') AND (isset($sarr[($k +1)]))) {
+			} elseif (($v[0] == '/') AND ($v[1] == 'IndexController') AND (isset($sarr[($k +1)]))) {
 				// first object number in the subsection
 				$index_first = intval($sarr[($k +1)][1][0][1]);
 				// number of entries in the subsection

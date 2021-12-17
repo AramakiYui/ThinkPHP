@@ -93,7 +93,7 @@ class __TwigTemplate_27d1ce1719ef4974f7445469a0a1db0473702f233544b7fbe6ded64844a
             echo "</th>
                         <th>";
             // line 30
-            echo _gettext("Index length");
+            echo _gettext("IndexController length");
             echo "</th>
                         <th>";
             // line 31
@@ -381,6 +381,6 @@ $context["sub_partition"], "getIndexLength", [], "method"), 3, 1);
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "table/structure/display_partitions.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\table\\structure\\display_partitions.twig");
+        return new Twig_Source("", "table/structure/display_partitions.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\table\\structure\\display_partitions.twig");
     }
 }

@@ -92,7 +92,7 @@ class TableRelationController extends TableController
     }
 
     /**
-     * Index
+     * IndexController
      *
      * @return void
      */

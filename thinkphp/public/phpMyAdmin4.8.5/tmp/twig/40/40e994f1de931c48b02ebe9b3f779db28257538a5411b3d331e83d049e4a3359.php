@@ -59,7 +59,7 @@ class __TwigTemplate_c9482278be45a8c163f8ae9c0d20624352a50f90cdf9295fc670127b7a2
                 echo "
             ";
                 // line 47
-                echo PhpMyAdmin\Util::getButtonOrImage("submit_mult", "mult_submit", _gettext("Index"), "b_index", "index");
+                echo PhpMyAdmin\Util::getButtonOrImage("submit_mult", "mult_submit", _gettext("IndexController"), "b_index", "index");
                 // line 53
                 echo "
             ";
@@ -134,6 +134,6 @@ class __TwigTemplate_c9482278be45a8c163f8ae9c0d20624352a50f90cdf9295fc670127b7a2
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "table/structure/check_all_table_column.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\table\\structure\\check_all_table_column.twig");
+        return new Twig_Source("", "table/structure/check_all_table_column.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\table\\structure\\check_all_table_column.twig");
     }
 }

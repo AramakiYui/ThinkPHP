@@ -73,6 +73,6 @@ class __TwigTemplate_b632861dbf6add0589755600cb14b461d1183a3a41e8df46f377b226021
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "navigation/logo.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\navigation\\logo.twig");
+        return new Twig_Source("", "navigation/logo.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\navigation\\logo.twig");
     }
 }

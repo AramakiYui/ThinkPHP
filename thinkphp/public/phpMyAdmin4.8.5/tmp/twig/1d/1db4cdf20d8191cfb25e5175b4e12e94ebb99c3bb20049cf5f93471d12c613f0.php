@@ -78,6 +78,6 @@ class __TwigTemplate_71a7b6e7c2aa09862f0ad024b720046dc03dbf5e2b7c402a4476c7d66fc
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "console/toolbar.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\console\\toolbar.twig");
+        return new Twig_Source("", "console/toolbar.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\console\\toolbar.twig");
     }
 }

@@ -61,6 +61,6 @@ class __TwigTemplate_926ef02c86f83527c911566d2d3fbf542c115f6382c4bc94507a5366403
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "table/structure/move_columns_dialog.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\table\\structure\\move_columns_dialog.twig");
+        return new Twig_Source("", "table/structure/move_columns_dialog.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\table\\structure\\move_columns_dialog.twig");
     }
 }

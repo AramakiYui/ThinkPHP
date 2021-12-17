@@ -262,7 +262,7 @@ class Privileges
                 $GLOBALS['strPrivDescDropTbl']
             ),
             array(
-                'Index',
+                'IndexController',
                 'INDEX',
                 $GLOBALS['strPrivDescIndex']
             ),
@@ -1246,7 +1246,7 @@ class Privileges
                 'ALTER',
                 __('Allows altering the structure of existing tables.')
             ),
-            array('Index', 'INDEX', __('Allows creating and dropping indexes.')),
+            array('IndexController', 'INDEX', __('Allows creating and dropping indexes.')),
             array('Drop',
                 'DROP',
                 ($table == '*'
@@ -1495,7 +1495,7 @@ class Privileges
             $GLOBALS['pred_username'] = 'any';
         }
         $html_output = '<fieldset id="fieldset_add_user_login">' . "\n"
-            . '<legend>' . __('Login Information') . '</legend>' . "\n"
+            . '<legend>' . __('LoginController Information') . '</legend>' . "\n"
             . '<div class="item">' . "\n"
             . '<label for="select_pred_username">' . "\n"
             . '    ' . __('User name:') . "\n"
@@ -3110,7 +3110,7 @@ class Privileges
         }
 
         $html_output .= '<fieldset id="fieldset_change_copy_user">' . "\n"
-            . '<legend data-submenu-label="' . __('Login Information') . '">' . "\n"
+            . '<legend data-submenu-label="' . __('LoginController Information') . '">' . "\n"
             . __('Change login information / Copy user account')
             . '</legend>' . "\n"
             . self::getHtmlForLoginInformationFields('change', $username, $hostname);

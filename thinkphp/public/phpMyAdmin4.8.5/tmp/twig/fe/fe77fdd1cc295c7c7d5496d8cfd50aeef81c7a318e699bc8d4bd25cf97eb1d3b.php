@@ -167,7 +167,7 @@ class __TwigTemplate_fc9191054ec4be41621279c9c39f12300bad8d8ec7fc258a86efd24cbcd
             if (twig_in_filter((isset($context["field_name"]) ? $context["field_name"] : null), (isset($context["columns_with_index"]) ? $context["columns_with_index"] : null))) {
                 // line 66
                 echo "                ";
-                $context["displayed_field_name"] = ((isset($context["displayed_field_name"]) ? $context["displayed_field_name"] : null) . PhpMyAdmin\Util::getImage("bd_primary", _gettext("Index")));
+                $context["displayed_field_name"] = ((isset($context["displayed_field_name"]) ? $context["displayed_field_name"] : null) . PhpMyAdmin\Util::getImage("bd_primary", _gettext("IndexController")));
                 // line 69
                 echo "            ";
             }
@@ -431,6 +431,6 @@ $context["row"], "Field", [], "array"), (isset($context["central_list"]) ? $cont
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "table/structure/display_structure.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\table\\structure\\display_structure.twig");
+        return new Twig_Source("", "table/structure/display_structure.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\table\\structure\\display_structure.twig");
     }
 }

@@ -88,7 +88,7 @@ class TableGisVisualizationController extends TableController
     }
 
     /**
-     * Index
+     * IndexController
      *
      * @return void
      */

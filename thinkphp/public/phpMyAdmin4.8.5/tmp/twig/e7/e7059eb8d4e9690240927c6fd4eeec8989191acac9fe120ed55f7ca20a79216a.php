@@ -65,7 +65,7 @@ class __TwigTemplate_71a45ecc8247b04f277700331206939458b30816639d64cc3b84905807c
 (isset($context["type"]) ? $context["type"] : null), "tbl_storage_engine" =>         // line 46
 (isset($context["tbl_storage_engine"]) ? $context["tbl_storage_engine"] : null), "class" => "add_index nowrap", "has_field" => false, "has_link_class" => false, "url_query" =>         // line 50
 (isset($context["url_query"]) ? $context["url_query"] : null), "primary" =>         // line 51
-(isset($context["primary"]) ? $context["primary"] : null), "syntax" => "ADD INDEX", "message" => _gettext("An index has been added on %s."), "action" => "Index", "titles" =>         // line 55
+(isset($context["primary"]) ? $context["primary"] : null), "syntax" => "ADD INDEX", "message" => _gettext("An index has been added on %s."), "action" => "IndexController", "titles" =>         // line 55
 (isset($context["titles"]) ? $context["titles"] : null), "row" =>         // line 56
 (isset($context["row"]) ? $context["row"] : null), "is_primary" => false, "table" =>         // line 58
 (isset($context["table"]) ? $context["table"] : null)]);
@@ -219,6 +219,6 @@ class __TwigTemplate_71a45ecc8247b04f277700331206939458b30816639d64cc3b84905807c
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "table/structure/actions_in_table_structure.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\table\\structure\\actions_in_table_structure.twig");
+        return new Twig_Source("", "table/structure/actions_in_table_structure.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\table\\structure\\actions_in_table_structure.twig");
     }
 }

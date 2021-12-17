@@ -85,6 +85,6 @@ class __TwigTemplate_3151f1f22f6438728a4210439b3a09dfb3c6ee7f3caef194cbeab5762ac
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "database/create_table.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\database\\create_table.twig");
+        return new Twig_Source("", "database/create_table.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\database\\create_table.twig");
     }
 }

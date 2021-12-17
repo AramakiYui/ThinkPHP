@@ -11,7 +11,7 @@ use PhpMyAdmin\VersionInformation;
 use PhpMyAdmin\Sanitize;
 
 /**
- * PhpMyAdmin\Setup\Index class
+ * PhpMyAdmin\Setup\IndexController class
  *
  * Various checks and message functions used on index page.
  *

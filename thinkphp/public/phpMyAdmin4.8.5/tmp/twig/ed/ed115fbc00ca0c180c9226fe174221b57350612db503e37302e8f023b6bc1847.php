@@ -125,6 +125,6 @@ class __TwigTemplate_1ef0a2a712adceb14cb51b5615527bb7454625dd3029d62cfc6323d63ed
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "table/structure/add_column.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\table\\structure\\add_column.twig");
+        return new Twig_Source("", "table/structure/add_column.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\table\\structure\\add_column.twig");
     }
 }

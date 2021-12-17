@@ -1,0 +1,19 @@
+本项目使用Thinkphp5.0框架编写
+开发环境：
+	PhpStudy 8.1.0.5
+	Apache2.4.39
+	MySQL5.7.26
+	Php5.2.17nts
+	PhpMyAdmin4.8.5
+网站域名：www.schoolsubscribe.com
+
+数据库名：www.schoolsubscribe.com
+	账号:school
+	密码:school
+	数据库备份在sql文件夹下
+
+登录须知：
+	必须选定身份
+	老师用户名：100001、100002、100003
+	学生用户名：170220309、170150112、170150101、170150102
+	密码与用户名相同

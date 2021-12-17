@@ -71,6 +71,6 @@ class __TwigTemplate_4ef3cacc24275b2a4029e800d561da1cce600f17d66bf531a914f546cc2
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "select_all.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\select_all.twig");
+        return new Twig_Source("", "select_all.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\select_all.twig");
     }
 }

@@ -29,7 +29,7 @@ class TableIndexesController extends TableController
     /**
      * Constructor
      *
-     * @param Index $index Index
+     * @param Index $index IndexController
      */
     public function __construct(
         $response,
@@ -44,7 +44,7 @@ class TableIndexesController extends TableController
     }
 
     /**
-     * Index
+     * IndexController
      *
      * @return void
      */

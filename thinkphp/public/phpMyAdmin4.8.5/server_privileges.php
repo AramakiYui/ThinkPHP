@@ -153,7 +153,7 @@ if (! $GLOBALS['is_grantuser'] && !$GLOBALS['is_createuser']) {
 }
 
 /**
- * Checks if the user is using "Change Login Information / Copy User" dialog
+ * Checks if the user is using "Change LoginController Information / Copy User" dialog
  * only to update the password
  */
 if (isset($_POST['change_copy']) && $username == $_POST['old_username']

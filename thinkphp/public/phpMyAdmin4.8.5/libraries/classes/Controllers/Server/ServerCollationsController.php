@@ -22,7 +22,7 @@ use PhpMyAdmin\Template;
 class ServerCollationsController extends Controller
 {
     /**
-     * Index action
+     * IndexController action
      *
      * @return void
      */

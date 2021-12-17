@@ -713,11 +713,11 @@ class Descriptions
                     . 'recommended for non-trusted environments.'
                 );
             case 'LoginCookieStore_name':
-                return __('Login cookie store');
+                return __('LoginController cookie store');
             case 'LoginCookieValidity_desc':
                 return __('Define how long (in seconds) a login cookie is valid.');
             case 'LoginCookieValidity_name':
-                return __('Login cookie validity');
+                return __('LoginController cookie validity');
             case 'LongtextDoubleTextarea_desc':
                 return __('Double size of textarea for LONGTEXT columns.');
             case 'LongtextDoubleTextarea_name':
@@ -1347,7 +1347,7 @@ class Descriptions
                     '`LoginCookieValidity`.'
                 );
             case 'LoginCookieValidityDisableWarning_name':
-                return __('Login cookie validity warning');
+                return __('LoginController cookie validity warning');
             case 'TextareaCols_desc':
                 return __(
                     'Textarea size (columns) in edit mode, this value will be emphasized for SQL ' .

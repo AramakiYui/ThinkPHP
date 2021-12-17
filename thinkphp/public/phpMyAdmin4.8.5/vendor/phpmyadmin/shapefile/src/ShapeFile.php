@@ -501,7 +501,7 @@ class ShapeFile
      */
     private function _openSHXFile($toWrite = false)
     {
-        $this->SHXFile = $this->_openFile($toWrite, '.shx', 'Index');
+        $this->SHXFile = $this->_openFile($toWrite, '.shx', 'IndexController');
         if (!$this->SHXFile) {
             return false;
         }

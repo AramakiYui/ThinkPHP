@@ -280,6 +280,6 @@ class __TwigTemplate_844bf1a6f53438ab5e858ef9339ea6d90171fde2155fa3cfd3d94f39c0e
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "database/structure/body_for_table_summary.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\database\\structure\\body_for_table_summary.twig");
+        return new Twig_Source("", "database/structure/body_for_table_summary.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\database\\structure\\body_for_table_summary.twig");
     }
 }

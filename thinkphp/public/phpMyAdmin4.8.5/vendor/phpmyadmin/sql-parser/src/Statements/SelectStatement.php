@@ -139,7 +139,7 @@ class SelectStatement extends Statement
     public $from = array();
 
     /**
-     * Index hints
+     * IndexController hints
      *
      * @var IndexHint[]
      */

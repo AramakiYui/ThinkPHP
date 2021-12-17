@@ -145,7 +145,7 @@ class AuthenticationCookie extends AuthenticationPlugin
         }
         echo '
     <br />
-    <!-- Login form -->
+    <!-- LoginController form -->
     <form method="post" id="login_form" action="index.php" name="login_form"' , $autocomplete ,
             ' class="disableAjax login hide js-show">
         <fieldset>

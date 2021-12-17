@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Parses an Index hint.
+ * Parses an IndexController hint.
  */
 
 namespace PhpMyAdmin\SqlParser\Components;
@@ -12,7 +12,7 @@ use PhpMyAdmin\SqlParser\Token;
 use PhpMyAdmin\SqlParser\TokensList;
 
 /**
- * Parses an Index hint.
+ * Parses an IndexController hint.
  *
  * @category   Components
  *

@@ -164,7 +164,7 @@ abstract class AuthenticationPlugin
     {
         if ($failure == 'empty-denied') {
             return __(
-                'Login without a password is forbidden by configuration'
+                'LoginController without a password is forbidden by configuration'
                 . ' (see AllowNoPassword)'
             );
         } elseif ($failure == 'root-denied' || $failure == 'allow-denied') {

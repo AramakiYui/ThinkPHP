@@ -72,6 +72,6 @@ class __TwigTemplate_0dd89ac02fbb3c203edffbe1f9b2b7e8f5452c2edc2887a1a9f92a2f66d
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "checkbox.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\checkbox.twig");
+        return new Twig_Source("", "checkbox.twig", "D:\\phpstudy_pro\\SchoolSubscribe\\ThinkPHP\\thinkphp\\public\\phpMyAdmin4.8.5\\templates\\checkbox.twig");
     }
 }

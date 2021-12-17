@@ -23,7 +23,7 @@ use PhpMyAdmin\Util;
 class ServerEnginesController extends Controller
 {
     /**
-     * Index action
+     * IndexController action
      *
      * @return void
      */
